@@ -8,7 +8,6 @@ import {
   Check,
   Eyebrow,
   FlowVisual,
-  PromptVisual,
   SectionIntro,
   TutorVisual,
 } from "./components";
@@ -24,7 +23,25 @@ export default function Home() {
               El aprendizaje ahora tiene{" "}
               <span className="gradient-text">inteligencia propia.</span>
             </h1>
+          </div>
+          <div className="hero-learning-stage">
+            <div className="learning-stage-orbit learning-stage-orbit-one" />
+            <div className="learning-stage-orbit learning-stage-orbit-two" />
+            <div className="learning-stage-topline">
+              <span>Diseña una experiencia</span>
+              <span className="learning-stage-live">
+                <i className="pulse-dot" /> IA en contexto
+              </span>
+            </div>
             <HeroLearningForm />
+            <div className="learning-stage-outcomes" aria-hidden="true">
+              <span>Contenido</span>
+              <span>Simulaciones</span>
+              <span>Tutor</span>
+              <span>Analítica</span>
+            </div>
+          </div>
+          <div className="hero-support">
             <p className="lead">
               Convierte un prompt o tus documentos en una experiencia completa
               con contenido, quizzes y simulaciones. Tutores contextuales guían
@@ -42,7 +59,6 @@ export default function Home() {
               aprendizaje.
             </div>
           </div>
-          <PromptVisual />
         </div>
       </section>
 

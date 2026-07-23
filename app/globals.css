@@ -295,9 +295,23 @@ select {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.04fr) minmax(470px, 0.96fr);
-  gap: 48px;
+  grid-template-columns: minmax(0, 0.86fr) minmax(520px, 1.14fr);
+  grid-template-areas:
+    "copy stage"
+    "support stage";
+  column-gap: 54px;
+  row-gap: 0;
   align-items: center;
+}
+
+.hero-copy {
+  grid-area: copy;
+  align-self: end;
+}
+
+.hero-support {
+  grid-area: support;
+  align-self: start;
 }
 
 .eyebrow {
@@ -338,7 +352,7 @@ h1 {
 .hero h1 {
   margin-top: 21px;
   margin-bottom: 19px;
-  font-size: clamp(50px, 5.3vw, 74px);
+  font-size: clamp(50px, 5vw, 72px);
   line-height: 0.96;
 }
 
@@ -391,23 +405,23 @@ h3 {
 
 .hero-learning-form {
   margin-top: 0;
-  padding: 9px;
-  border: 1px solid rgba(127, 59, 237, 0.22);
-  border-radius: 18px;
-  background: rgba(255,255,255,0.96);
-  box-shadow: 0 22px 55px rgba(74, 42, 101, 0.13);
+  padding: 15px;
+  border: 1px solid rgba(255,255,255,0.72);
+  border-radius: 26px;
+  background: rgba(255,255,255,0.98);
+  box-shadow: 0 30px 80px rgba(26, 12, 47, 0.27);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hero-learning-form:focus-within {
-  border-color: var(--purple-light);
+  border-color: white;
   box-shadow:
-    0 24px 62px rgba(74, 42, 101, 0.17),
-    0 0 0 4px rgba(127, 59, 237, 0.08);
+    0 34px 90px rgba(26, 12, 47, 0.31),
+    0 0 0 5px rgba(255,255,255,0.2);
 }
 
 .learning-form-heading {
-  padding: 9px 13px 3px;
+  padding: 10px 12px 7px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -416,46 +430,47 @@ h3 {
 
 .learning-form-heading label {
   color: var(--ink);
-  font-size: 15px;
+  font-size: 22px;
   font-weight: 680;
   letter-spacing: -0.02em;
 }
 
 .learning-form-heading > span {
-  padding: 5px 8px;
+  padding: 7px 11px;
   border-radius: 99px;
   background: var(--lilac-2);
   color: var(--purple);
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 720;
   letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
 .learning-input-row {
-  min-height: 60px;
+  min-height: 92px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
 }
 
 .learning-spark {
-  width: 38px;
-  height: 38px;
-  margin-left: 7px;
-  border-radius: 11px;
+  width: 60px;
+  height: 60px;
+  margin-left: 4px;
+  border-radius: 17px;
   display: grid;
   place-items: center;
   flex: 0 0 auto;
-  background: var(--lilac);
+  background: linear-gradient(145deg, #eee4ff, #dfceff);
   color: var(--purple);
-  font-size: 15px;
+  font-size: 22px;
+  box-shadow: inset 0 0 0 1px rgba(127,59,237,0.05);
 }
 
 .learning-input-shell {
   position: relative;
   min-width: 0;
-  min-height: 52px;
+  min-height: 72px;
   display: flex;
   align-items: center;
   flex: 1;
@@ -473,7 +488,8 @@ h3 {
   outline: 0;
   background: transparent;
   color: var(--ink);
-  font-size: 14px;
+  font-size: 19px;
+  letter-spacing: -0.02em;
 }
 
 .animated-learning-example {
@@ -482,7 +498,7 @@ h3 {
   left: 4px;
   right: 0;
   color: #9f96a5;
-  font-size: 13px;
+  font-size: 17px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -492,22 +508,22 @@ h3 {
 
 .animated-learning-example i {
   color: var(--purple);
-  font-size: 10px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 760;
 }
 
 .learning-input-row button {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border: 0;
-  border-radius: 13px;
+  border-radius: 20px;
   display: grid;
   place-items: center;
   flex: 0 0 auto;
   background: var(--purple);
   color: white;
-  font-size: 21px;
+  font-size: 30px;
   cursor: pointer;
   box-shadow: 0 12px 24px rgba(127, 59, 237, 0.24);
   transition: transform 0.2s ease, background 0.2s ease;
@@ -524,14 +540,14 @@ h3 {
 }
 
 .learning-form-note {
-  padding: 7px 13px 9px;
+  padding: 11px 12px 7px;
   border-top: 1px solid #f0ebf3;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 14px;
   color: #8b8291;
-  font-size: 9px;
+  font-size: 11px;
 }
 
 .learning-form-note > span {
@@ -541,10 +557,120 @@ h3 {
 }
 
 .learning-form-note .pulse-dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   display: inline-block;
   box-shadow: 0 0 0 3px rgba(100, 201, 154, 0.11);
+}
+
+.hero-learning-stage {
+  position: relative;
+  grid-area: stage;
+  min-height: 530px;
+  padding: 46px 38px;
+  border: 1px solid rgba(127, 59, 237, 0.2);
+  border-radius: 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 86% 10%, rgba(198, 158, 255, 0.72), transparent 30%),
+    radial-gradient(circle at 12% 92%, rgba(116, 222, 201, 0.24), transparent 32%),
+    linear-gradient(145deg, #27143f 0%, #6724c8 50%, #8b43f1 100%);
+  box-shadow:
+    0 40px 100px rgba(67, 31, 102, 0.22),
+    inset 0 1px 0 rgba(255,255,255,0.18);
+}
+
+.hero-learning-stage::before {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  top: -105px;
+  right: -60px;
+  border-radius: 72px;
+  background: rgba(255,255,255,0.08);
+  transform: rotate(28deg);
+}
+
+.learning-stage-topline {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  color: white;
+  font-size: 11px;
+  font-weight: 760;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.learning-stage-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.78);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.learning-stage-live .pulse-dot {
+  display: inline-block;
+  box-shadow: 0 0 0 5px rgba(100, 201, 154, 0.17);
+}
+
+.hero-learning-stage .hero-learning-form,
+.learning-stage-outcomes {
+  position: relative;
+  z-index: 2;
+}
+
+.learning-stage-outcomes {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+}
+
+.learning-stage-outcomes span {
+  min-height: 42px;
+  padding: 0 9px;
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.86);
+  font-size: 9px;
+  font-weight: 670;
+  letter-spacing: 0.04em;
+}
+
+.learning-stage-orbit {
+  position: absolute;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.learning-stage-orbit-one {
+  width: 570px;
+  height: 240px;
+  left: -60px;
+  top: 100px;
+  transform: rotate(-13deg);
+}
+
+.learning-stage-orbit-two {
+  width: 430px;
+  height: 430px;
+  right: -210px;
+  bottom: -210px;
 }
 
 @keyframes learning-example-swap {
@@ -3307,9 +3433,27 @@ a:hover .arrow {
     grid-template-columns: 1fr;
   }
 
+  .hero-grid {
+    grid-template-areas:
+      "copy"
+      "stage"
+      "support";
+    row-gap: 36px;
+  }
+
   .hero-copy,
   .page-hero-copy {
     max-width: 820px;
+  }
+
+  .hero-support {
+    max-width: 720px;
+  }
+
+  .hero-learning-stage {
+    width: min(760px, 100%);
+    min-height: 480px;
+    margin: 0 auto;
   }
 
   .prompt-visual {
@@ -3428,12 +3572,23 @@ a:hover .arrow {
     gap: 35px;
   }
 
+  .hero-learning-stage {
+    min-height: 420px;
+    padding: 30px 18px;
+    border-radius: 28px;
+  }
+
   .hero-learning-form {
-    border-radius: 15px;
+    padding: 11px;
+    border-radius: 20px;
   }
 
   .learning-form-heading {
     align-items: flex-start;
+  }
+
+  .learning-form-heading label {
+    font-size: 18px;
   }
 
   .learning-form-heading > span {
@@ -3441,19 +3596,56 @@ a:hover .arrow {
   }
 
   .learning-input-row {
+    min-height: 72px;
+    gap: 9px;
+  }
+
+  .learning-spark {
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+    font-size: 17px;
+  }
+
+  .learning-input-shell {
     min-height: 58px;
   }
 
+  .learning-input-row input {
+    font-size: 14px;
+  }
+
+  .animated-learning-example {
+    font-size: 13px;
+  }
+
+  .animated-learning-example i {
+    font-size: 10px;
+  }
+
   .learning-input-row button {
-    width: 46px;
-    height: 46px;
-    border-radius: 11px;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    font-size: 23px;
   }
 
   .learning-form-note {
     align-items: flex-start;
     flex-direction: column;
     gap: 7px;
+  }
+
+  .learning-stage-topline {
+    margin-bottom: 13px;
+  }
+
+  .learning-stage-live {
+    display: none;
+  }
+
+  .learning-stage-outcomes {
+    grid-template-columns: 1fr 1fr;
   }
 
   .prompt-visual {
