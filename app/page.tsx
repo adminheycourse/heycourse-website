@@ -48,10 +48,11 @@ export default function Home() {
           {[
             "Creación desde prompts",
             "Quizzes y simulaciones",
-            "Tutores contextuales",
+            "Tutor · Socrático · Evaluador",
+            "Voz y avatar",
             "Trazabilidad personal",
             "Riesgo de deserción",
-            "LXP + LMS",
+            "Marca blanca",
           ].map((item) => (
             <span key={item}>
               <span className="rail-orb" /> {item}
@@ -179,6 +180,41 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section">
+        <div className="container">
+          <SectionIntro
+            eyebrow="Intención pedagógica"
+            title="No hay un tutor. Hay un modo para cada objetivo."
+            text="La inteligencia puede explicar de forma directa, guiar con preguntas o diagnosticar qué domina una persona. Y puede hacerlo por chat, voz o avatar."
+          />
+          <div className="home-tutor-modes">
+            <article>
+              <span>01</span>
+              <small>RESUELVE</small>
+              <h3>Tutor</h3>
+              <p>Explica y responde directamente cuando avanzar es la prioridad.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <small>HACE PENSAR</small>
+              <h3>Socrático</h3>
+              <p>Guía con una pregunta por vez y ofrece pistas antes de revelar la respuesta.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <small>DIAGNOSTICA</small>
+              <h3>Evaluador</h3>
+              <p>Comprueba dominio, clasifica respuestas y recomienda qué conviene repasar.</p>
+            </article>
+          </div>
+          <div className="mode-footer">
+            <span><i className="pulse-dot" /> Disponibles por chat y voz</span>
+            <span>Sesiones con avatar y role-play en Business</span>
+            <ButtonLink href="/tutores" variant="secondary">Explorar tutores <Arrow /></ButtonLink>
+          </div>
+        </div>
+      </section>
+
       <section className="section lilac-section">
         <div className="container">
           <SectionIntro
@@ -251,6 +287,31 @@ export default function Home() {
               <Arrow />
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="section brand-pricing-section">
+        <div className="container brand-pricing-grid">
+          <article className="home-brand-card">
+            <span className="card-index">MARCA BLANCA</span>
+            <div className="home-brand-sample">
+              <span className="sample-logo">norte+</span>
+              <small>aprender.norte.com</small>
+            </div>
+            <h2>Tu marca por fuera. La inteligencia de HeyCourse por dentro.</h2>
+            <p>Logo, colores, subdominio o dominio propio, emails y certificados dentro de una operación multiempresa.</p>
+            <ButtonLink href="/marca-blanca" variant="white">Explorar marca blanca <Arrow /></ButtonLink>
+          </article>
+          <article className="home-pricing-card">
+            <span className="card-index">PRICING POR ORGANIZACIÓN</span>
+            <div className="pricing-signal">
+              <strong>∞</strong>
+              <span>estudiantes desde Starter</span>
+            </div>
+            <h2>Pagás por capacidad y por la IA que realmente usás.</h2>
+            <p>Planes desde USD 99/mes. Pro suma voz y marca blanca; Business incorpora avatar, simulaciones y dominio propio.</p>
+            <ButtonLink href="/pricing">Comparar planes <Arrow /></ButtonLink>
+          </article>
         </div>
       </section>
 

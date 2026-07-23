@@ -17,8 +17,13 @@ export function Logo() {
 const platformLinks = [
   ["/producto", "Vista general", "La plataforma completa"],
   ["/crear", "Crear", "De prompts a experiencias"],
-  ["/tutores", "Guiar", "Tutores, no bots"],
+  ["/tutores", "Guiar", "Tutor, Socrático y Evaluador"],
   ["/analitica", "Medir", "Trazabilidad e intervención"],
+];
+
+const solutionLinks = [
+  ["/casos-de-uso", "Casos de uso", "Aprendizaje conectado al trabajo"],
+  ["/marca-blanca", "Marca blanca", "Tu identidad, dominio y experiencia"],
 ];
 
 export function SiteHeader() {
@@ -40,7 +45,18 @@ export function SiteHeader() {
           </details>
           <Link href="/como-funciona">Cómo funciona</Link>
           <Link href="/lxp-lms">LXP + LMS</Link>
-          <Link href="/casos-de-uso">Casos de uso</Link>
+          <details className="nav-dropdown">
+            <summary>Soluciones <span>⌄</span></summary>
+            <div className="dropdown-panel">
+              {solutionLinks.map(([href, label, text]) => (
+                <Link href={href} key={href}>
+                  <strong>{label}</strong>
+                  <small>{text}</small>
+                </Link>
+              ))}
+            </div>
+          </details>
+          <Link href="/pricing">Pricing</Link>
         </nav>
         <div className="nav-actions">
           <Link className="nav-text-link" href="/producto">Conocer más</Link>
@@ -61,6 +77,8 @@ export function SiteHeader() {
             <Link href="/como-funciona">Cómo funciona</Link>
             <Link href="/lxp-lms">LXP + LMS</Link>
             <Link href="/casos-de-uso">Casos de uso</Link>
+            <Link href="/marca-blanca">Marca blanca</Link>
+            <Link href="/pricing">Pricing</Link>
             <Link className="button" href="/demo">Ver experiencia</Link>
           </div>
         </details>
@@ -92,6 +110,8 @@ export function SiteFooter() {
           <Link href="/como-funciona">Cómo funciona</Link>
           <Link href="/lxp-lms">LXP + LMS</Link>
           <Link href="/casos-de-uso">Casos de uso</Link>
+          <Link href="/marca-blanca">Marca blanca</Link>
+          <Link href="/pricing">Pricing</Link>
           <Link href="/demo">Experiencia guiada</Link>
         </div>
         <div className="footer-cta">

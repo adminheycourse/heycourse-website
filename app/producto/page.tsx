@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 
 const modules = [
   ["✦", "Crear", "Genera estructuras, contenido, quizzes y simulaciones desde un prompt o tus documentos."],
-  ["⌘", "Orquestar", "Diseña rutas, asigna experiencias y gestiona múltiples equipos o empresas."],
-  ["◎", "Guiar", "Tutores contextuales acompañan el recorrido con memoria de progreso."],
+  ["⌘", "Orquestar", "Diseña rutas y opera múltiples organizaciones con identidad, dominio y catálogo propios."],
+  ["◎", "Guiar", "Elige Tutor, Socrático o Evaluador por chat o voz; suma avatar cuando la experiencia lo requiere."],
   ["◇", "Practicar", "Escenarios y rúbricas convierten conocimiento en decisiones observables."],
   ["⌁", "Medir", "Visualiza avance, dominio, interacción y señales de fricción a nivel personal."],
   ["↗", "Intervenir", "Prioriza dónde actuar para sostener engagement y anticipar riesgo de abandono."],
@@ -140,6 +140,9 @@ export default function ProductoPage() {
               <li><Check /> Rutas, cohortes y certificados</li>
               <li><Check /> Visibilidad para cada rol</li>
             </ul>
+            <ButtonLink href="/marca-blanca" variant="secondary">
+              Explorar marca blanca <Arrow />
+            </ButtonLink>
           </div>
         </div>
       </section>
