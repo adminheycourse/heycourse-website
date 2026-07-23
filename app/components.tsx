@@ -59,10 +59,12 @@ export function SiteHeader() {
           <Link href="/pricing">Pricing</Link>
         </nav>
         <div className="nav-actions">
-          <Link className="nav-text-link" href="/producto">Conocer más</Link>
-          <Link className="button button-small" href="/demo">
-            Ver experiencia
-          </Link>
+          <a className="nav-text-link" href="https://www.heycourse.ai/login">
+            Iniciar sesión
+          </a>
+          <a className="button button-small" href="https://www.heycourse.ai/register">
+            Crear cuenta
+          </a>
         </div>
         <details className="mobile-menu">
           <summary aria-label="Abrir menú">
@@ -79,7 +81,15 @@ export function SiteHeader() {
             <Link href="/casos-de-uso">Casos de uso</Link>
             <Link href="/marca-blanca">Marca blanca</Link>
             <Link href="/pricing">Pricing</Link>
-            <Link className="button" href="/demo">Ver experiencia</Link>
+            <Link href="/demo">Ver experiencia</Link>
+            <div className="mobile-account-actions">
+              <a className="button button-secondary" href="https://www.heycourse.ai/login">
+                Iniciar sesión
+              </a>
+              <a className="button" href="https://www.heycourse.ai/register">
+                Crear cuenta
+              </a>
+            </div>
           </div>
         </details>
       </div>
@@ -115,11 +125,12 @@ export function SiteFooter() {
           <Link href="/demo">Experiencia guiada</Link>
         </div>
         <div className="footer-cta">
-          <h4>¿Listo para verlo distinto?</h4>
-          <p>Explora el recorrido completo de HeyCourse.</p>
-          <Link className="text-link" href="/demo">
-            Comenzar <Arrow />
-          </Link>
+          <h4>Entrar a HeyCourse</h4>
+          <p>Continúa en tu cuenta o crea una organización para empezar.</p>
+          <div className="footer-account-links">
+            <a href="https://www.heycourse.ai/login">Iniciar sesión</a>
+            <a href="https://www.heycourse.ai/register">Crear cuenta <Arrow /></a>
+          </div>
         </div>
       </div>
       <div className="container footer-bottom">
