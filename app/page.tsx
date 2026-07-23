@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   AnalyticsVisual,
@@ -27,8 +28,32 @@ export default function Home() {
               con contenido, quizzes y simulaciones. Tutores contextuales guían
               a cada persona y la trazabilidad te ayuda a intervenir antes.
             </p>
+            <form
+              className="hero-learning-form"
+              action="https://www.heycourse.ai/register"
+              method="get"
+            >
+              <label htmlFor="learning-goal">¿Qué quieres aprender?</label>
+              <div className="learning-input-row">
+                <span className="learning-spark" aria-hidden="true">✦</span>
+                <input
+                  id="learning-goal"
+                  name="learning_goal"
+                  type="text"
+                  placeholder="Ej. Liderar conversaciones difíciles"
+                  maxLength={160}
+                />
+                <button type="submit" aria-label="Crear mi experiencia en HeyCourse">
+                  <span aria-hidden="true">→</span>
+                </button>
+              </div>
+              <div className="learning-form-note">
+                <span><i className="pulse-dot" /> Empieza con una idea</span>
+                <span>Prueba gratuita · sin tarjeta</span>
+              </div>
+            </form>
             <div className="button-row">
-              <ButtonLink href="/demo">Ver la experiencia</ButtonLink>
+              <ButtonLink href="/demo" variant="secondary">Recorrer una experiencia</ButtonLink>
               <ButtonLink href="/como-funciona" variant="secondary">
                 Cómo funciona <Arrow />
               </ButtonLink>
@@ -58,6 +83,27 @@ export default function Home() {
               <span className="rail-orb" /> {item}
             </span>
           ))}
+        </div>
+      </section>
+
+      <section className="vision-art-section">
+        <div className="container">
+          <div className="vision-art-caption">
+            <Eyebrow>Learning intelligence</Eyebrow>
+            <p>
+              Una sola inteligencia conecta la intención, la práctica, el tutor
+              y las señales personales.
+            </p>
+          </div>
+          <figure className="vision-art">
+            <Image
+              src="/og.png"
+              alt="HeyCourse conecta prompts, quizzes, simulaciones, tutores contextuales y analítica personal en un sistema de inteligencia de aprendizaje."
+              width={1731}
+              height={909}
+              sizes="(max-width: 720px) 100vw, 1180px"
+            />
+          </figure>
         </div>
       </section>
 

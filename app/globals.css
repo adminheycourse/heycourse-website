@@ -375,6 +375,117 @@ h3 {
   font-size: 13px;
 }
 
+.hero-learning-form {
+  margin-top: 30px;
+  padding: 9px;
+  border: 1px solid rgba(127, 59, 237, 0.22);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.96);
+  box-shadow: 0 22px 55px rgba(74, 42, 101, 0.13);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-learning-form:focus-within {
+  border-color: var(--purple-light);
+  box-shadow:
+    0 24px 62px rgba(74, 42, 101, 0.17),
+    0 0 0 4px rgba(127, 59, 237, 0.08);
+}
+
+.hero-learning-form > label {
+  display: block;
+  padding: 10px 13px 3px;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 680;
+  letter-spacing: -0.02em;
+}
+
+.learning-input-row {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.learning-spark {
+  width: 38px;
+  height: 38px;
+  margin-left: 7px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  background: var(--lilac);
+  color: var(--purple);
+  font-size: 15px;
+}
+
+.learning-input-row input {
+  min-width: 0;
+  flex: 1;
+  padding: 14px 4px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.learning-input-row input::placeholder {
+  color: #a39aa9;
+}
+
+.learning-input-row button {
+  width: 50px;
+  height: 50px;
+  border: 0;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  background: var(--purple);
+  color: white;
+  font-size: 21px;
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(127, 59, 237, 0.24);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.learning-input-row button:hover {
+  transform: translateX(2px);
+  background: var(--purple-dark);
+}
+
+.learning-input-row button:focus-visible {
+  outline: 3px solid rgba(127, 59, 237, 0.23);
+  outline-offset: 3px;
+}
+
+.learning-form-note {
+  padding: 7px 13px 9px;
+  border-top: 1px solid #f0ebf3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  color: #8b8291;
+  font-size: 9px;
+}
+
+.learning-form-note > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.learning-form-note .pulse-dot {
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  box-shadow: 0 0 0 3px rgba(100, 201, 154, 0.11);
+}
+
 .pulse-dot {
   width: 8px;
   height: 8px;
@@ -600,6 +711,42 @@ h3 {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background: white;
+}
+
+.vision-art-section {
+  padding: 76px 0 42px;
+}
+
+.vision-art-caption {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.vision-art-caption p {
+  max-width: 520px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+  text-align: right;
+}
+
+.vision-art {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(127, 59, 237, 0.14);
+  border-radius: 27px;
+  background: white;
+  box-shadow: 0 30px 80px rgba(66, 38, 92, 0.13);
+}
+
+.vision-art img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .rail-track {
@@ -3159,6 +3306,26 @@ a:hover .arrow {
     gap: 35px;
   }
 
+  .hero-learning-form {
+    border-radius: 15px;
+  }
+
+  .learning-input-row {
+    min-height: 58px;
+  }
+
+  .learning-input-row button {
+    width: 46px;
+    height: 46px;
+    border-radius: 11px;
+  }
+
+  .learning-form-note {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
   .prompt-visual {
     min-height: 440px;
   }
@@ -3288,6 +3455,24 @@ a:hover .arrow {
 
   .principle-strip .container {
     grid-template-columns: 1fr;
+  }
+
+  .vision-art-section {
+    padding: 52px 0 20px;
+  }
+
+  .vision-art-caption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .vision-art-caption p {
+    text-align: left;
+  }
+
+  .vision-art {
+    border-radius: 17px;
   }
 
   .home-tutor-modes,
