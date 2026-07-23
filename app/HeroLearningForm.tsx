@@ -29,6 +29,7 @@ export function HeroLearningForm() {
 
   return (
     <form
+      id="hero-learning-form"
       className="hero-learning-form"
       action="https://www.heycourse.ai/register"
       method="get"
@@ -59,9 +60,6 @@ export function HeroLearningForm() {
             </span>
           )}
         </div>
-        <button type="submit" aria-label="Crear mi experiencia en HeyCourse">
-          <span aria-hidden="true">→</span>
-        </button>
       </div>
       <div className="learning-form-note" id="learning-form-help">
         <span><i className="pulse-dot" /> La IA diseña el primer recorrido</span>

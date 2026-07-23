@@ -513,32 +513,6 @@ h3 {
   font-weight: 760;
 }
 
-.learning-input-row button {
-  width: 70px;
-  height: 70px;
-  border: 0;
-  border-radius: 20px;
-  display: grid;
-  place-items: center;
-  flex: 0 0 auto;
-  background: var(--purple);
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-  box-shadow: 0 12px 24px rgba(127, 59, 237, 0.24);
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.learning-input-row button:hover {
-  transform: translateX(2px);
-  background: var(--purple-dark);
-}
-
-.learning-input-row button:focus-visible {
-  outline: 3px solid rgba(127, 59, 237, 0.23);
-  outline-offset: 3px;
-}
-
 .learning-form-note {
   padding: 11px 12px 7px;
   border-top: 1px solid #f0ebf3;
@@ -649,6 +623,54 @@ h3 {
   font-size: 9px;
   font-weight: 670;
   letter-spacing: 0.04em;
+}
+
+.learning-stage-submit {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 62px;
+  margin-top: 12px;
+  padding: 0 24px;
+  border: 1px solid rgba(255,255,255,0.78);
+  border-radius: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  background: white;
+  color: var(--purple-dark);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 760;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  box-shadow: 0 18px 42px rgba(29, 12, 50, 0.2);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.learning-stage-submit span {
+  font-size: 23px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.learning-stage-submit:hover {
+  transform: translateY(-2px);
+  background: #faf7ff;
+  box-shadow: 0 23px 50px rgba(29, 12, 50, 0.25);
+}
+
+.learning-stage-submit:hover span {
+  transform: translateX(4px);
+}
+
+.learning-stage-submit:focus-visible {
+  outline: 3px solid rgba(255,255,255,0.56);
+  outline-offset: 4px;
 }
 
 .learning-stage-orbit {
@@ -3623,13 +3645,6 @@ a:hover .arrow {
     font-size: 10px;
   }
 
-  .learning-input-row button {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    font-size: 23px;
-  }
-
   .learning-form-note {
     align-items: flex-start;
     flex-direction: column;
@@ -3646,6 +3661,11 @@ a:hover .arrow {
 
   .learning-stage-outcomes {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .learning-stage-submit {
+    min-height: 56px;
+    border-radius: 14px;
   }
 
   .prompt-visual {

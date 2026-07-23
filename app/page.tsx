@@ -40,6 +40,13 @@ export default function Home() {
               <span>Tutor</span>
               <span>Analítica</span>
             </div>
+            <button
+              className="learning-stage-submit"
+              type="submit"
+              form="hero-learning-form"
+            >
+              Generar contenido <span aria-hidden="true">→</span>
+            </button>
           </div>
           <div className="hero-support">
             <p className="lead">
