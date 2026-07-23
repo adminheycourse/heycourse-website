@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HeroLearningForm } from "./HeroLearningForm";
 import {
   AnalyticsVisual,
   Arrow,
@@ -23,35 +24,12 @@ export default function Home() {
               El aprendizaje ahora tiene{" "}
               <span className="gradient-text">inteligencia propia.</span>
             </h1>
+            <HeroLearningForm />
             <p className="lead">
               Convierte un prompt o tus documentos en una experiencia completa
               con contenido, quizzes y simulaciones. Tutores contextuales guían
               a cada persona y la trazabilidad te ayuda a intervenir antes.
             </p>
-            <form
-              className="hero-learning-form"
-              action="https://www.heycourse.ai/register"
-              method="get"
-            >
-              <label htmlFor="learning-goal">¿Qué quieres aprender?</label>
-              <div className="learning-input-row">
-                <span className="learning-spark" aria-hidden="true">✦</span>
-                <input
-                  id="learning-goal"
-                  name="learning_goal"
-                  type="text"
-                  placeholder="Ej. Liderar conversaciones difíciles"
-                  maxLength={160}
-                />
-                <button type="submit" aria-label="Crear mi experiencia en HeyCourse">
-                  <span aria-hidden="true">→</span>
-                </button>
-              </div>
-              <div className="learning-form-note">
-                <span><i className="pulse-dot" /> Empieza con una idea</span>
-                <span>Prueba gratuita · sin tarjeta</span>
-              </div>
-            </form>
             <div className="button-row">
               <ButtonLink href="/demo" variant="secondary">Recorrer una experiencia</ButtonLink>
               <ButtonLink href="/como-funciona" variant="secondary">
