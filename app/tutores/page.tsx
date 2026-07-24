@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import {
   Arrow,
@@ -219,12 +220,33 @@ export default function TutoresPage() {
             </article>
 
             <article className="modality-card avatar-card">
-              <div className="avatar-stage">
+              <div
+                className="avatar-stage"
+                aria-label="Alma, avatar de tutoría, en una sesión activa de liderazgo"
+              >
                 <div className="avatar-halo" />
-                <span className="avatar-person">A</span>
+                <div className="avatar-video-frame">
+                  <Image
+                    className="avatar-person"
+                    src="/heycourse-avatar-alma.jpg"
+                    alt="Alma, avatar digital de tutoría"
+                    fill
+                    sizes="(max-width: 720px) 210px, 230px"
+                  />
+                  <span className="avatar-camera-light" aria-hidden="true" />
+                </div>
                 <div className="avatar-caption">
                   <i className="pulse-dot" />
-                  <span>Sesión activa · Liderazgo</span>
+                  <span>
+                    <strong>Alma</strong>
+                    Sesión activa · Liderazgo
+                  </span>
+                  <span className="avatar-audio-wave" aria-hidden="true">
+                    <i />
+                    <i />
+                    <i />
+                    <i />
+                  </span>
                 </div>
               </div>
               <h3>Una presencia para conversaciones que importan.</h3>
