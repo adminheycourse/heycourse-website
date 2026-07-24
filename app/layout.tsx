@@ -32,6 +32,15 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description:
       "LXP + LMS con inteligencia de aprendizaje para convertir conocimiento en capacidades demostrables.",
+    alternates: {
+      canonical: "/",
+      languages: {
+        es: "/",
+        en: "/en",
+        pt: "/pt",
+        fr: "/fr",
+      },
+    },
     icons: {
       icon: [{ url: "/heycourse-mark.png", type: "image/png" }],
       apple: "/heycourse-mark.png",

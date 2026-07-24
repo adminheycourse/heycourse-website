@@ -4,8 +4,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import {
+  localeFromPathname,
+  localeOptions,
+  localizedPath,
+  type Locale,
+} from "./locales";
 
 type HeaderLink = readonly [href: string, label: string, text: string];
+
+const languageSelectorLabels: Record<Locale, string> = {
+  es: "Selector de idioma",
+  en: "Language selector",
+  pt: "Seletor de idioma",
+  fr: "Sélecteur de langue",
+};
 
 const navigation = {
   es: {
@@ -52,23 +65,63 @@ const navigation = {
       ["/marca-blanca", "White label", "Your identity, domain and experience"],
     ] as HeaderLink[],
   },
+  pt: {
+    platform: "Plataforma",
+    how: "Como funciona",
+    solutions: "Soluções",
+    signIn: "Entrar",
+    createAccount: "Criar conta",
+    experience: "Ver experiência",
+    openMenu: "Abrir menu",
+    closeMenu: "Fechar menu",
+    navigationLabel: "Navegação principal",
+    homeLabel: "HeyCourse, início",
+    platformLinks: [
+      ["/producto", "Visão geral", "A plataforma completa"],
+      ["/crear", "Criar", "De prompts a experiências"],
+      ["/tutores", "Tutores + simulações", "Bot vs Agent vs Learning Tutor"],
+      ["/analitica", "Medir", "Rastreabilidade e intervenção"],
+    ] as HeaderLink[],
+    solutionLinks: [
+      ["/casos-de-uso", "Casos de uso", "Aprendizagem conectada ao trabalho"],
+      ["/marca-blanca", "Marca branca", "Sua identidade, domínio e experiência"],
+    ] as HeaderLink[],
+  },
+  fr: {
+    platform: "Plateforme",
+    how: "Comment ça marche",
+    solutions: "Solutions",
+    signIn: "Se connecter",
+    createAccount: "Créer un compte",
+    experience: "Voir l’expérience",
+    openMenu: "Ouvrir le menu",
+    closeMenu: "Fermer le menu",
+    navigationLabel: "Navigation principale",
+    homeLabel: "HeyCourse, accueil",
+    platformLinks: [
+      ["/producto", "Vue d’ensemble", "La plateforme complète"],
+      ["/crear", "Créer", "Des prompts aux expériences"],
+      ["/tutores", "Tuteurs + simulations", "Bot vs Agent vs Learning Tutor"],
+      ["/analitica", "Mesurer", "Traçabilité et intervention"],
+    ] as HeaderLink[],
+    solutionLinks: [
+      ["/casos-de-uso", "Cas d’usage", "Un apprentissage connecté au travail"],
+      ["/marca-blanca", "Marque blanche", "Votre identité, domaine et expérience"],
+    ] as HeaderLink[],
+  },
 };
 
-function localizeHref(href: string, isEnglish: boolean) {
-  return isEnglish ? `/en${href === "/" ? "" : href}` : href;
-}
-
 function HeaderLogo({
-  isEnglish,
+  locale,
   label,
 }: {
-  isEnglish: boolean;
+  locale: Locale;
   label: string;
 }) {
   return (
     <Link
       className="brand"
-      href={localizeHref("/", isEnglish)}
+      href={localizedPath("/", locale)}
       aria-label={label}
     >
       <Image
@@ -86,12 +139,12 @@ function DesktopDropdown({
   id,
   label,
   links,
-  isEnglish,
+  locale,
 }: {
   id: string;
   label: string;
   links: HeaderLink[];
-  isEnglish: boolean;
+  locale: Locale;
 }) {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -169,7 +222,7 @@ function DesktopDropdown({
       <div className="dropdown-panel" id={id} hidden={!open}>
         {links.map(([href, linkLabel, text]) => (
           <Link
-            href={localizeHref(href, isEnglish)}
+            href={localizedPath(href, locale)}
             key={href}
             onClick={() => setOpen(false)}
           >
@@ -183,39 +236,37 @@ function DesktopDropdown({
 }
 
 function LanguageSelector({ pathname }: { pathname: string }) {
-  const isEnglish = pathname === "/en" || pathname.startsWith("/en/");
-  const spanishPath = isEnglish ? pathname.replace(/^\/en(?=\/|$)/, "") || "/" : pathname;
-  const englishPath = isEnglish
-    ? pathname
-    : `/en${pathname === "/" ? "" : pathname}`;
+  const locale = localeFromPathname(pathname);
 
   return (
-    <div className="language-switcher" aria-label="Language selector">
-      <a
-        href={spanishPath}
-        lang="es"
-        aria-current={!isEnglish ? "page" : undefined}
-        className={!isEnglish ? "is-active" : undefined}
-      >
-        ES
-      </a>
-      <span aria-hidden="true">/</span>
-      <a
-        href={englishPath}
-        lang="en"
-        aria-current={isEnglish ? "page" : undefined}
-        className={isEnglish ? "is-active" : undefined}
-      >
-        EN
-      </a>
+    <div
+      className="language-switcher"
+      aria-label={languageSelectorLabels[locale]}
+    >
+      {localeOptions.map((option, index) => (
+        <span className="language-choice" key={option.code}>
+          {index > 0 && <i aria-hidden="true">/</i>}
+          <a
+            href={localizedPath(pathname, option.code)}
+            lang={option.code}
+            hrefLang={option.code}
+            title={option.name}
+            aria-label={option.name}
+            aria-current={locale === option.code ? "page" : undefined}
+            className={locale === option.code ? "is-active" : undefined}
+          >
+            {option.shortLabel}
+          </a>
+        </span>
+      ))}
     </div>
   );
 }
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const isEnglish = pathname === "/en" || pathname.startsWith("/en/");
-  const copy = isEnglish ? navigation.en : navigation.es;
+  const locale = localeFromPathname(pathname);
+  const copy = navigation[locale];
   const [mobileOpen, setMobileOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
@@ -245,23 +296,23 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="container nav-wrap">
-        <HeaderLogo isEnglish={isEnglish} label={copy.homeLabel} />
+        <HeaderLogo locale={locale} label={copy.homeLabel} />
         <nav className="desktop-nav" aria-label={copy.navigationLabel}>
           <DesktopDropdown
             id="platform-navigation"
             label={copy.platform}
             links={copy.platformLinks}
-            isEnglish={isEnglish}
+            locale={locale}
           />
-          <Link href={localizeHref("/como-funciona", isEnglish)}>{copy.how}</Link>
-          <Link href={localizeHref("/lxp-lms", isEnglish)}>LXP + LMS</Link>
+          <Link href={localizedPath("/como-funciona", locale)}>{copy.how}</Link>
+          <Link href={localizedPath("/lxp-lms", locale)}>LXP + LMS</Link>
           <DesktopDropdown
             id="solutions-navigation"
             label={copy.solutions}
             links={copy.solutionLinks}
-            isEnglish={isEnglish}
+            locale={locale}
           />
-          <Link href={localizeHref("/pricing", isEnglish)}>Pricing</Link>
+          <Link href={localizedPath("/pricing", locale)}>Pricing</Link>
         </nav>
         <div className="nav-actions">
           <LanguageSelector pathname={pathname} />
@@ -293,7 +344,7 @@ export function SiteHeader() {
             <span className="mobile-label">{copy.platform}</span>
             {copy.platformLinks.map(([href, label]) => (
               <Link
-                href={localizeHref(href, isEnglish)}
+                href={localizedPath(href, locale)}
                 key={href}
                 onClick={() => setMobileOpen(false)}
               >
@@ -301,37 +352,37 @@ export function SiteHeader() {
               </Link>
             ))}
             <Link
-              href={localizeHref("/como-funciona", isEnglish)}
+              href={localizedPath("/como-funciona", locale)}
               onClick={() => setMobileOpen(false)}
             >
               {copy.how}
             </Link>
             <Link
-              href={localizeHref("/lxp-lms", isEnglish)}
+              href={localizedPath("/lxp-lms", locale)}
               onClick={() => setMobileOpen(false)}
             >
               LXP + LMS
             </Link>
             <Link
-              href={localizeHref("/casos-de-uso", isEnglish)}
+              href={localizedPath("/casos-de-uso", locale)}
               onClick={() => setMobileOpen(false)}
             >
               {copy.solutionLinks[0][1]}
             </Link>
             <Link
-              href={localizeHref("/marca-blanca", isEnglish)}
+              href={localizedPath("/marca-blanca", locale)}
               onClick={() => setMobileOpen(false)}
             >
               {copy.solutionLinks[1][1]}
             </Link>
             <Link
-              href={localizeHref("/pricing", isEnglish)}
+              href={localizedPath("/pricing", locale)}
               onClick={() => setMobileOpen(false)}
             >
               Pricing
             </Link>
             <Link
-              href={localizeHref("/demo", isEnglish)}
+              href={localizedPath("/demo", locale)}
               onClick={() => setMobileOpen(false)}
             >
               {copy.experience}

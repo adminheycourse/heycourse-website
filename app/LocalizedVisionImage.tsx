@@ -2,23 +2,39 @@
 
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { localeFromPathname, type Locale } from "./locales";
+
+const localizedVision: Record<
+  Locale,
+  { src: string; alt: string }
+> = {
+  es: {
+    src: "/og-learning-intelligence.png",
+    alt: "HeyCourse conecta prompts, quizzes, simulaciones, tutores contextuales y analítica personal en un sistema de inteligencia de aprendizaje.",
+  },
+  en: {
+    src: "/og-learning-intelligence-en.png",
+    alt: "HeyCourse connects prompts, quizzes, simulations, contextual tutors and individual analytics in one learning intelligence system.",
+  },
+  pt: {
+    src: "/og-learning-intelligence-pt.png",
+    alt: "A HeyCourse conecta prompts, quizzes, simulações, tutores contextuais e análises individuais em um sistema de inteligência de aprendizagem.",
+  },
+  fr: {
+    src: "/og-learning-intelligence-fr.png",
+    alt: "HeyCourse relie les prompts, les quiz, les simulations, les tuteurs contextuels et les analyses individuelles dans un système d’intelligence d’apprentissage.",
+  },
+};
 
 export function LocalizedVisionImage() {
   const pathname = usePathname();
-  const isEnglish = pathname === "/en" || pathname.startsWith("/en/");
+  const locale = localeFromPathname(pathname);
+  const image = localizedVision[locale];
 
   return (
     <Image
-      src={
-        isEnglish
-          ? "/og-learning-intelligence-en.png"
-          : "/og-learning-intelligence.png"
-      }
-      alt={
-        isEnglish
-          ? "HeyCourse connects prompts, quizzes, simulations, contextual tutors and individual analytics in one learning intelligence system."
-          : "HeyCourse conecta prompts, quizzes, simulaciones, tutores contextuales y analítica personal en un sistema de inteligencia de aprendizaje."
-      }
+      src={image.src}
+      alt={image.alt}
       width={1725}
       height={912}
       sizes="(max-width: 720px) 100vw, 1180px"

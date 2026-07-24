@@ -4,15 +4,50 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useCallback, useRef, useState } from "react";
 import type { SyntheticEvent } from "react";
+import { localeFromPathname, type Locale } from "./locales";
 
 const LOOP_SECONDS = 5;
 
+const avatarCopy: Record<
+  Locale,
+  {
+    video: string;
+    session: string;
+    listen: string;
+    mute: string;
+  }
+> = {
+  es: {
+    video: "/heycourse-avatar-sophia-loop.mp4",
+    session: "Sesión activa · Liderazgo",
+    listen: "Escuchar a Sophia",
+    mute: "Silenciar",
+  },
+  en: {
+    video: "/heycourse-avatar-sophia-en-loop.mp4",
+    session: "Active session · Leadership",
+    listen: "Listen to Sophia",
+    mute: "Mute",
+  },
+  pt: {
+    video: "/heycourse-avatar-sophia-pt-loop.mp4",
+    session: "Sessão ativa · Liderança",
+    listen: "Ouvir Sophia",
+    mute: "Silenciar",
+  },
+  fr: {
+    video: "/heycourse-avatar-sophia-fr-loop.mp4",
+    session: "Session active · Leadership",
+    listen: "Écouter Sophia",
+    mute: "Couper le son",
+  },
+};
+
 export function AnimatedAvatar() {
   const pathname = usePathname();
-  const isEnglish = pathname === "/en" || pathname.startsWith("/en/");
-  const videoSource = isEnglish
-    ? "/heycourse-avatar-sophia-en-loop.mp4"
-    : "/heycourse-avatar-sophia-loop.mp4";
+  const locale = localeFromPathname(pathname);
+  const copy = avatarCopy[locale];
+  const videoSource = copy.video;
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isSpeaking, setIsSpeaking] = useState(false);
 
@@ -93,7 +128,7 @@ export function AnimatedAvatar() {
         <i className="pulse-dot" />
         <span>
           <strong>Sophia</strong>
-          {isEnglish ? "Active session · Leadership" : "Sesión activa · Liderazgo"}
+          {copy.session}
         </span>
         <button
           className={`avatar-audio-control${isSpeaking ? " is-speaking" : ""}`}
@@ -107,13 +142,7 @@ export function AnimatedAvatar() {
             <i />
             <i />
           </span>
-          {isSpeaking
-            ? isEnglish
-              ? "Mute"
-              : "Silenciar"
-            : isEnglish
-              ? "Listen to Sophia"
-              : "Escuchar a Sophia"}
+          {isSpeaking ? copy.mute : copy.listen}
         </button>
       </div>
     </>

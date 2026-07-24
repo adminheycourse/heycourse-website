@@ -186,12 +186,12 @@ select {
 
 .language-switcher {
   min-height: 32px;
-  padding: 3px 8px;
+  padding: 3px 6px;
   border: 1px solid var(--line);
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
-  gap: 3px;
+  gap: 0;
   background: rgba(255, 255, 255, 0.72);
   color: #a49ba9;
   font-size: 11px;
@@ -199,9 +199,20 @@ select {
   letter-spacing: 0.04em;
 }
 
+.language-choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.language-choice i {
+  color: #c8c1cc;
+  font-style: normal;
+}
+
 .language-switcher a {
-  min-width: 25px;
-  padding: 4px 5px;
+  min-width: 23px;
+  padding: 4px;
   border-radius: 999px;
   color: inherit;
   text-align: center;
