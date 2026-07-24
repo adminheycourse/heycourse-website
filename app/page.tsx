@@ -112,10 +112,10 @@ export default function Home() {
           </div>
           <figure className="vision-art">
             <Image
-              src="/og.png"
+              src="/og-learning-intelligence.png"
               alt="HeyCourse conecta prompts, quizzes, simulaciones, tutores contextuales y analítica personal en un sistema de inteligencia de aprendizaje."
-              width={1731}
-              height={909}
+              width={1725}
+              height={912}
               sizes="(max-width: 720px) 100vw, 1180px"
             />
           </figure>

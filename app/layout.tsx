@@ -29,13 +29,17 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description:
       "LXP + LMS con inteligencia de aprendizaje para convertir conocimiento en capacidades demostrables.",
+    icons: {
+      icon: [{ url: "/heycourse-mark.png", type: "image/png" }],
+      apple: "/heycourse-mark.png",
+    },
     openGraph: {
       type: "website",
       locale: "es_ES",
       title: "HeyCourse — Convierte conocimiento en capacidades demostrables",
       description:
         "Crea experiencias, guía personas y mide resultados con inteligencia de aprendizaje.",
-      images: [{ url: socialImage, width: 1727, height: 911 }],
+      images: [{ url: socialImage, width: 1725, height: 912 }],
     },
     twitter: {
       card: "summary_large_image",

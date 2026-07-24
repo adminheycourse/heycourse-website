@@ -1,16 +1,26 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
 export function Logo() {
   return (
     <Link className="brand" href="/" aria-label="HeyCourse, inicio">
-      <span className="brand-mark" aria-hidden="true">
-        <i />
-        <i />
-        <i />
-      </span>
-      <span>heycourse</span>
+      <Image
+        className="brand-logo"
+        src="/heycourse-logo.png"
+        alt=""
+        width={760}
+        height={160}
+      />
     </Link>
+  );
+}
+
+export function BrandMark() {
+  return (
+    <span className="window-logo" aria-hidden="true">
+      <Image src="/heycourse-mark.png" alt="" width={150} height={150} />
+    </span>
   );
 }
 
@@ -223,7 +233,7 @@ export function PromptVisual({ compact = false }: { compact?: boolean }) {
       <div className="visual-glow" />
       <div className="prompt-window">
         <div className="window-top">
-          <span className="window-logo"><i /><i /><i /></span>
+          <BrandMark />
           <span>Studio</span>
           <span className="window-status">Borrador inteligente</span>
         </div>

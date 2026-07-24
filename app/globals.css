@@ -83,35 +83,14 @@ select {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 21px;
-  font-weight: 720;
-  letter-spacing: -0.045em;
+  flex: 0 0 auto;
 }
 
-.brand-mark {
-  width: 31px;
-  height: 31px;
-  padding: 7px 6px;
-  border-radius: 9px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-  background: var(--purple);
-}
-
-.brand-mark i,
-.window-logo i {
-  width: 3px;
-  border-radius: 5px;
-  background: white;
+.brand-logo {
+  width: 176px;
+  height: auto;
   display: block;
 }
-
-.brand-mark i:nth-child(1) { height: 8px; }
-.brand-mark i:nth-child(2) { height: 16px; }
-.brand-mark i:nth-child(3) { height: 11px; }
 
 .desktop-nav {
   display: flex;
@@ -805,20 +784,19 @@ h3 {
 }
 
 .window-logo {
-  width: 25px;
-  height: 25px;
-  border-radius: 7px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5px;
-  background: var(--purple);
+  width: 29px;
+  height: 29px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
 }
 
-.window-logo i { width: 2px; }
-.window-logo i:nth-child(1) { height: 6px; }
-.window-logo i:nth-child(2) { height: 12px; }
-.window-logo i:nth-child(3) { height: 8px; }
+.window-logo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
 
 .window-status {
   margin-left: auto;

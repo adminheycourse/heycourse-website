@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {
   Arrow,
+  BrandMark,
   ButtonLink,
   Check,
   PageHero,
@@ -268,7 +269,7 @@ export default function TutoresPage() {
           <div className="simulator-console" aria-label="Ejemplo de una simulación de venta consultiva">
             <div className="simulator-top">
               <div>
-                <span className="window-logo"><i /><i /><i /></span>
+                <BrandMark />
                 <strong>Simulación · Venta consultiva</strong>
               </div>
               <span className="live-pill">En contexto</span>

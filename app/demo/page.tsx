@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {
   Arrow,
+  BrandMark,
   ButtonLink,
   PageHero,
   SectionIntro,
@@ -47,7 +48,7 @@ export default function DemoPage() {
           />
           <div className="demo-shell">
             <aside className="demo-sidebar">
-              <span className="window-logo"><i /><i /><i /></span>
+              <BrandMark />
               <h3>Liderar conversaciones difíciles</h3>
               <p>Ruta guiada · 35 minutos</p>
               <nav className="demo-nav" aria-label="Módulos de la experiencia">
