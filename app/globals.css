@@ -1884,6 +1884,70 @@ a:hover .arrow {
   min-height: 460px;
 }
 
+.tutor-hero-showcase {
+  position: relative;
+  min-height: 540px;
+  padding: 18px 0 72px;
+}
+
+.hero-sophia-stage {
+  height: 455px;
+  margin: 0;
+  border-radius: 28px;
+  box-shadow:
+    0 28px 80px rgba(66, 32, 119, 0.2),
+    inset 0 0 0 1px rgba(255,255,255,0.12);
+}
+
+.hero-sophia-stage .avatar-halo {
+  top: 29px;
+  width: 350px;
+  height: 350px;
+  box-shadow:
+    0 0 0 62px rgba(255,255,255,0.045),
+    0 0 0 124px rgba(255,255,255,0.025);
+}
+
+.hero-sophia-stage .avatar-video-frame {
+  top: 24px;
+  width: 330px;
+  height: 360px;
+  border-radius: 165px 165px 34px 34px;
+}
+
+.hero-sophia-stage .avatar-caption {
+  left: 24px;
+  right: 24px;
+  bottom: 22px;
+  padding: 12px 14px;
+  font-size: 10px;
+}
+
+.hero-sophia-stage .avatar-caption strong {
+  font-size: 12px;
+}
+
+.hero-sophia-stage .avatar-audio-control {
+  padding: 6px 11px;
+  font-size: 9px;
+}
+
+.hero-tutor-context {
+  position: absolute;
+  z-index: 4;
+  right: -38px;
+  bottom: 0;
+  width: min(390px, 76%);
+}
+
+.hero-tutor-context .tutor-visual {
+  margin-top: 0;
+  border-color: rgba(125,54,239,0.16);
+  background: rgba(255,255,255,0.94);
+  box-shadow: 0 22px 52px rgba(47, 28, 73, 0.18);
+  backdrop-filter: blur(18px);
+}
+
 .subnav {
   position: sticky;
   top: 76px;
@@ -4132,6 +4196,15 @@ a:hover .arrow {
     margin: 0 auto;
   }
 
+  .tutor-hero-showcase {
+    width: min(660px, 100%);
+    margin: 0 auto;
+  }
+
+  .hero-tutor-context {
+    right: -20px;
+  }
+
   .rail-track {
     justify-content: flex-start;
     overflow-x: auto;
@@ -4470,6 +4543,54 @@ a:hover .arrow {
 
   .page-hero-copy h1 {
     font-size: clamp(44px, 13vw, 62px);
+  }
+
+  .tutor-hero-showcase {
+    min-height: auto;
+    padding: 0;
+  }
+
+  .hero-sophia-stage {
+    height: 400px;
+    border-radius: 22px;
+  }
+
+  .hero-sophia-stage .avatar-halo {
+    top: 28px;
+    width: 285px;
+    height: 285px;
+  }
+
+  .hero-sophia-stage .avatar-video-frame {
+    top: 24px;
+    width: 270px;
+    height: 300px;
+    border-radius: 140px 140px 30px 30px;
+  }
+
+  .hero-sophia-stage .avatar-caption {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    padding: 10px;
+  }
+
+  .hero-sophia-stage .avatar-caption > span {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .hero-sophia-stage .avatar-audio-control {
+    padding: 6px 8px;
+  }
+
+  .hero-tutor-context {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: calc(100% - 28px);
+    margin: -18px auto 0;
   }
 
   .step-row {

@@ -100,7 +100,18 @@ export default function TutoresPage() {
         text="Un Bot responde. Un Agent ejecuta. HeyCourse conoce el contenido, el objetivo, el rol y el progreso para guiar, hacer practicar, evaluar y dejar evidencia."
         action={<ButtonLink href="#comparativa">Ver la diferencia</ButtonLink>}
       >
-        <TutorVisual />
+        <div className="tutor-hero-showcase">
+          <div
+            className="avatar-stage hero-sophia-stage"
+            aria-label="Sophia, tutora con avatar y voz de HeyCourse"
+          >
+            <div className="avatar-halo" />
+            <AnimatedAvatar />
+          </div>
+          <div className="hero-tutor-context">
+            <TutorVisual />
+          </div>
+        </div>
       </PageHero>
 
       <section className="tutor-mode-rail" aria-label="Modos de tutor">
