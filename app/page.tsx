@@ -20,8 +20,14 @@ export default function Home() {
           <div className="hero-copy">
             <Eyebrow>La plataforma de inteligencia de aprendizaje</Eyebrow>
             <h1>
-              Convierte conocimiento en{" "}
-              <span className="gradient-text">capacidades demostrables.</span>
+              <span className="hero-title-line">Convierte</span>
+              <span className="hero-title-line hero-title-nowrap">
+                conocimiento en
+              </span>
+              <span className="hero-title-line gradient-text">capacidades</span>
+              <span className="hero-title-line gradient-text">
+                demostrables.
+              </span>
             </h1>
             <div className="hero-answers" aria-label="Qué es, para quién sirve y qué hace HeyCourse">
               <div>
