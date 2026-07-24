@@ -184,6 +184,39 @@ select {
   gap: 18px;
 }
 
+.language-switcher {
+  min-height: 32px;
+  padding: 3px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #a49ba9;
+  font-size: 11px;
+  font-weight: 720;
+  letter-spacing: 0.04em;
+}
+
+.language-switcher a {
+  min-width: 25px;
+  padding: 4px 5px;
+  border-radius: 999px;
+  color: inherit;
+  text-align: center;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.language-switcher a:hover {
+  color: var(--purple);
+}
+
+.language-switcher a.is-active {
+  background: var(--lilac);
+  color: var(--purple-dark);
+}
+
 .nav-text-link {
   font-size: 14px;
   font-weight: 580;
@@ -4123,6 +4156,11 @@ a:hover .arrow {
     flex-direction: column;
     background: white;
     box-shadow: var(--shadow);
+  }
+
+  .mobile-panel > .language-switcher {
+    align-self: flex-end;
+    margin: 0 4px 5px;
   }
 
   .mobile-panel > a {

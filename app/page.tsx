@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { HeroLearningForm } from "./HeroLearningForm";
+import { LocalizedVisionImage } from "./LocalizedVisionImage";
 import {
   AnalyticsVisual,
   Arrow,
@@ -117,13 +117,7 @@ export default function Home() {
             </p>
           </div>
           <figure className="vision-art">
-            <Image
-              src="/og-learning-intelligence.png"
-              alt="HeyCourse conecta prompts, quizzes, simulaciones, tutores contextuales y analítica personal en un sistema de inteligencia de aprendizaje."
-              width={1725}
-              height={912}
-              sizes="(max-width: 720px) 100vw, 1180px"
-            />
+            <LocalizedVisionImage />
           </figure>
         </div>
       </section>

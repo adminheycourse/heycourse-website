@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { headers } from "next/headers";
 import { SiteFooter } from "./components";
 import { SiteHeader } from "./SiteHeader";
+import { LanguageRuntime } from "./LanguageRuntime";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -24,6 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const socialImage = new URL("/og-learning-intelligence.png", origin).toString();
 
   return {
+    metadataBase: new URL(origin),
     title: {
       default: "HeyCourse — Learning intelligence",
       template: "%s | HeyCourse",
@@ -60,9 +62,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <SiteHeader />
-        {children}
-        <SiteFooter />
+        <LanguageRuntime>
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+        </LanguageRuntime>
       </body>
     </html>
   );

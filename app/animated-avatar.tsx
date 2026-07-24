@@ -1,12 +1,18 @@
 "use client";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useCallback, useRef, useState } from "react";
 import type { SyntheticEvent } from "react";
 
 const LOOP_SECONDS = 5;
 
 export function AnimatedAvatar() {
+  const pathname = usePathname();
+  const isEnglish = pathname === "/en" || pathname.startsWith("/en/");
+  const videoSource = isEnglish
+    ? "/heycourse-avatar-sophia-en-loop.mp4"
+    : "/heycourse-avatar-sophia-loop.mp4";
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isSpeaking, setIsSpeaking] = useState(false);
 
@@ -63,6 +69,7 @@ export function AnimatedAvatar() {
           sizes="(max-width: 720px) 210px, 230px"
         />
         <video
+          key={videoSource}
           ref={videoRef}
           className="avatar-person avatar-person-video"
           poster="/heycourse-avatar-sophia.jpg"
@@ -76,7 +83,7 @@ export function AnimatedAvatar() {
           onEnded={(event) => restoreSilentLoop(event.currentTarget)}
         >
           <source
-            src="/heycourse-avatar-sophia-loop.mp4"
+            src={videoSource}
             type="video/mp4"
           />
         </video>
@@ -86,7 +93,7 @@ export function AnimatedAvatar() {
         <i className="pulse-dot" />
         <span>
           <strong>Sophia</strong>
-          Sesión activa · Liderazgo
+          {isEnglish ? "Active session · Leadership" : "Sesión activa · Liderazgo"}
         </span>
         <button
           className={`avatar-audio-control${isSpeaking ? " is-speaking" : ""}`}
@@ -100,7 +107,13 @@ export function AnimatedAvatar() {
             <i />
             <i />
           </span>
-          {isSpeaking ? "Silenciar" : "Escuchar a Sophia"}
+          {isSpeaking
+            ? isEnglish
+              ? "Mute"
+              : "Silenciar"
+            : isEnglish
+              ? "Listen to Sophia"
+              : "Escuchar a Sophia"}
         </button>
       </div>
     </>
