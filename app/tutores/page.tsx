@@ -1,5 +1,5 @@
-import Image from "next/image";
 import type { Metadata } from "next";
+import { AnimatedAvatar } from "../animated-avatar";
 import {
   Arrow,
   BrandMark,
@@ -226,13 +226,7 @@ export default function TutoresPage() {
               >
                 <div className="avatar-halo" />
                 <div className="avatar-video-frame">
-                  <Image
-                    className="avatar-person"
-                    src="/heycourse-avatar-alma.jpg"
-                    alt="Alma, avatar digital de tutoría"
-                    fill
-                    sizes="(max-width: 720px) 210px, 230px"
-                  />
+                  <AnimatedAvatar />
                   <span className="avatar-camera-light" aria-hidden="true" />
                 </div>
                 <div className="avatar-caption">

@@ -3054,11 +3054,21 @@ a:hover .arrow {
 }
 
 .avatar-person {
-  position: relative;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center 34%;
   transform: scale(1.025);
-  animation: avatar-presence 7s ease-in-out infinite;
+}
+
+.avatar-person-fallback {
+  z-index: 0;
+}
+
+.avatar-person-video {
+  z-index: 1;
 }
 
 .avatar-camera-light {
@@ -3145,11 +3155,6 @@ a:hover .arrow {
   50% { transform: translateY(-3px); }
 }
 
-@keyframes avatar-presence {
-  0%, 100% { transform: scale(1.025) translateY(0); }
-  50% { transform: scale(1.045) translateY(-2px); }
-}
-
 @keyframes avatar-live-light {
   0%, 100% { opacity: 0.68; transform: scale(0.92); }
   50% { opacity: 1; transform: scale(1.08); }
@@ -3158,6 +3163,19 @@ a:hover .arrow {
 @keyframes avatar-wave {
   0%, 100% { transform: scaleY(0.58); opacity: 0.68; }
   50% { transform: scaleY(1.1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar-person-video {
+    display: none;
+  }
+
+  .avatar-halo,
+  .avatar-video-frame,
+  .avatar-camera-light,
+  .avatar-audio-wave i {
+    animation: none;
+  }
 }
 
 .home-tutor-modes {
