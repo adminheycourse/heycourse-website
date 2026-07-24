@@ -86,7 +86,7 @@ const tutorModes = [
     text: "Hace preguntas de chequeo, clasifica las respuestas y entrega un diagnóstico. Funciona especialmente bien antes de una evaluación o como punto de entrada a una ruta.",
     conversation: [
       "Quiero saber si estoy listo para el examen.",
-      "Empecemos: explicá con tus palabras la diferencia entre CAC y LTV. Después avanzamos al siguiente criterio.",
+      "Empecemos: explica con tus palabras la diferencia entre CAC y LTV. Después avanzamos al siguiente criterio.",
     ],
   },
 ];
@@ -362,7 +362,7 @@ export default function TutoresPage() {
       <section className="section final-cta-section">
         <div className="container final-cta">
           <span className="eyebrow">Tutoría inteligente</span>
-          <h2>Elegí cómo debe enseñar. La inteligencia conserva el contexto.</h2>
+          <h2>Elige cómo debe enseñar. La inteligencia conserva el contexto.</h2>
           <p>Texto, voz o avatar. Explicación, preguntas o diagnóstico.</p>
           <div className="button-row centered-buttons">
             <ButtonLink href="/demo" variant="white">Ver una experiencia</ButtonLink>

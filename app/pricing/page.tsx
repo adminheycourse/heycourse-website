@@ -113,7 +113,7 @@ export default function PricingPage() {
     <main>
       <PageHero
         eyebrow="Pricing por organización"
-        title={<>Estudiantes ilimitados. Pagás por la plataforma y por la IA que <span className="gradient-text">realmente usás.</span></>}
+        title={<>Estudiantes ilimitados. Pagas por la plataforma y por la IA que <span className="gradient-text">realmente usas.</span></>}
         text="Cada plan incluye una capacidad operativa y créditos mensuales para generación de cursos, ilustraciones, tutores, voz, avatar y simulaciones."
         action={<ButtonLink href="#planes">Comparar planes</ButtonLink>}
       >
@@ -132,7 +132,7 @@ export default function PricingPage() {
       <section className="pricing-note">
         <div className="container">
           <span>Precios de lanzamiento</span>
-          <p>Facturación por organización. En el plan anual recibís todos los créditos del año por adelantado y 2 meses gratis.</p>
+          <p>Facturación por organización. En el plan anual recibes todos los créditos del año por adelantado y 2 meses gratis.</p>
         </div>
       </section>
 
@@ -211,7 +211,7 @@ export default function PricingPage() {
           <div className="faq-stack">
             <details open>
               <summary>¿Los créditos se acumulan?</summary>
-              <p>Los créditos mensuales se renuevan en cada ciclo. En planes anuales recibís todo el año por adelantado para usarlo a tu ritmo.</p>
+              <p>Los créditos mensuales se renuevan en cada ciclo. En planes anuales recibes todo el año por adelantado para usarlo a tu ritmo.</p>
             </details>
             <details>
               <summary>¿Cobran por estudiante?</summary>
@@ -231,8 +231,8 @@ export default function PricingPage() {
 
       <section className="section final-cta-section">
         <div className="container final-cta">
-          <span className="eyebrow">Elegí el punto de partida</span>
-          <h2>Probá la experiencia antes de decidir el plan.</h2>
+          <span className="eyebrow">Elige el punto de partida</span>
+          <h2>Prueba la experiencia antes de decidir el plan.</h2>
           <p>La prueba gratuita incluye creación con IA y tutoría de chat y voz.</p>
           <div className="button-row centered-buttons">
             <ButtonLink href="/demo" variant="white">Solicitar prueba gratis</ButtonLink>

@@ -95,8 +95,22 @@ const brandCopy: Record<string, string> = {
   "Escala adopción sin perder contexto.": "Scale adoption without losing context.",
   "Tu marca por fuera. La inteligencia de HeyCourse por dentro.":
     "Your brand on the outside. HeyCourse intelligence on the inside.",
-  "Pagás por capacidad y por la IA que realmente usás.":
+  "Pagas por capacidad y por la IA que realmente usas.":
     "Pay for capacity and the AI you actually use.",
+  "Estudiantes ilimitados. Pagas por la plataforma y por la IA que":
+    "Unlimited learners. Pay for the platform and the AI you",
+  "realmente usas.": "actually use.",
+  "Facturación por organización. En el plan anual recibes todos los créditos del año por adelantado y 2 meses gratis.":
+    "Organization-based billing. Annual plans include the full year’s credits upfront and two months free.",
+  "Los créditos mensuales se renuevan en cada ciclo. En planes anuales recibes todo el año por adelantado para usarlo a tu ritmo.":
+    "Monthly credits renew every cycle. Annual plans include the full year upfront, ready to use at your own pace.",
+  "Elige el punto de partida": "Choose your starting point",
+  "Prueba la experiencia antes de decidir el plan.":
+    "Try the experience before choosing a plan.",
+  "Empecemos: explica con tus palabras la diferencia entre CAC y LTV. Después avanzamos al siguiente criterio.":
+    "Let’s begin: explain the difference between CAC and LTV in your own words. Then we’ll move to the next criterion.",
+  "Elige cómo debe enseñar. La inteligencia conserva el contexto.":
+    "Choose how it should teach. The intelligence preserves context.",
   "Haz que el aprendizaje se mueva con tu organización.":
     "Make learning move with your organization.",
   "Crea experiencias, acompaña a cada persona y convierte el progreso en decisiones.":

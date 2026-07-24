@@ -372,7 +372,7 @@ export default function Home() {
               <strong>∞</strong>
               <span>estudiantes desde Starter</span>
             </div>
-            <h2>Pagás por capacidad y por la IA que realmente usás.</h2>
+            <h2>Pagas por capacidad y por la IA que realmente usas.</h2>
             <p>Planes desde USD 99/mes. Pro suma voz y marca blanca; Business incorpora avatar, simulaciones y dominio propio.</p>
             <ButtonLink href="/pricing">Comparar planes <Arrow /></ButtonLink>
           </article>
