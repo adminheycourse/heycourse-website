@@ -3103,7 +3103,7 @@ a:hover .arrow {
   backdrop-filter: blur(12px);
 }
 
-.avatar-caption > span:not(.avatar-audio-wave) {
+.avatar-caption > span {
   display: flex;
   align-items: baseline;
   gap: 7px;
@@ -3113,9 +3113,44 @@ a:hover .arrow {
   font-size: 10px;
 }
 
+.avatar-audio-control {
+  min-height: 28px;
+  margin-left: auto;
+  padding: 5px 9px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.avatar-audio-control:hover {
+  border-color: rgba(255,255,255,0.38);
+  background: rgba(255,255,255,0.18);
+  transform: translateY(-1px);
+}
+
+.avatar-audio-control:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.avatar-audio-control.is-speaking {
+  border-color: rgba(140,229,195,0.5);
+  background: rgba(98,211,168,0.18);
+}
+
 .avatar-audio-wave {
   height: 18px;
-  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 3px;
@@ -3128,6 +3163,11 @@ a:hover .arrow {
   background: #8ce5c3;
   transform-origin: center;
   animation: avatar-wave 1.1s ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+.avatar-audio-control.is-speaking .avatar-audio-wave i {
+  animation-play-state: running;
 }
 
 .avatar-audio-wave i:nth-child(2) {

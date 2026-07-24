@@ -84,7 +84,7 @@ export default function DemoPage() {
                 </div>
                 <div className="demo-tutor-bar">
                   <span className="tutor-avatar">A</span>
-                  <div><strong>Alma puede ayudarte a profundizar</strong><small>Conoce el escenario y tu progreso</small></div>
+                  <div><strong>Sophia puede ayudarte a profundizar</strong><small>Conoce el escenario y tu progreso</small></div>
                   <span>Conversar →</span>
                 </div>
               </article>

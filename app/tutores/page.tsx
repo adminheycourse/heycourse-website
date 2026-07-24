@@ -222,26 +222,10 @@ export default function TutoresPage() {
             <article className="modality-card avatar-card">
               <div
                 className="avatar-stage"
-                aria-label="Alma, avatar de tutoría, en una sesión activa de liderazgo"
+                aria-label="Sophia, avatar de tutoría, en una sesión activa de liderazgo"
               >
                 <div className="avatar-halo" />
-                <div className="avatar-video-frame">
-                  <AnimatedAvatar />
-                  <span className="avatar-camera-light" aria-hidden="true" />
-                </div>
-                <div className="avatar-caption">
-                  <i className="pulse-dot" />
-                  <span>
-                    <strong>Alma</strong>
-                    Sesión activa · Liderazgo
-                  </span>
-                  <span className="avatar-audio-wave" aria-hidden="true">
-                    <i />
-                    <i />
-                    <i />
-                    <i />
-                  </span>
-                </div>
+                <AnimatedAvatar />
               </div>
               <h3>Una presencia para conversaciones que importan.</h3>
               <p>

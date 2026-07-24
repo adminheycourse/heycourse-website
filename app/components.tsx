@@ -197,7 +197,7 @@ export function TutorVisual({ compact = false }: { compact?: boolean }) {
     <div className={`tutor-visual ${compact ? "tutor-compact" : ""}`}>
       <div className="tutor-head">
         <span className="tutor-avatar">A</span>
-        <div><strong>Alma</strong><small>Tutora de liderazgo</small></div>
+        <div><strong>Sophia</strong><small>Tutora de liderazgo</small></div>
         <span className="live-pill">En contexto</span>
       </div>
       <div className="tutor-message">
