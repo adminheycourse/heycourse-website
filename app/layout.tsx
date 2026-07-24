@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
     requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host");
   const protocol = requestHeaders.get("x-forwarded-proto") ?? "https";
   const origin = host ? `${protocol}://${host}` : "http://localhost:3000";
-  const socialImage = new URL("/og.png", origin).toString();
+  const socialImage = new URL("/og-learning-intelligence.png", origin).toString();
 
   return {
     title: {
@@ -28,20 +28,20 @@ export async function generateMetadata(): Promise<Metadata> {
       template: "%s | HeyCourse",
     },
     description:
-      "LXP + LMS reinventados con IA. Crea, guía, practica y mide experiencias de aprendizaje con inteligencia contextual.",
+      "LXP + LMS con inteligencia de aprendizaje para convertir conocimiento en capacidades demostrables.",
     openGraph: {
       type: "website",
       locale: "es_ES",
-      title: "HeyCourse — El aprendizaje ahora tiene inteligencia propia",
+      title: "HeyCourse — Convierte conocimiento en capacidades demostrables",
       description:
-        "LXP + LMS reinventados con IA contextual para crear, guiar, practicar y medir.",
-      images: [{ url: socialImage, width: 1200, height: 630 }],
+        "Crea experiencias, guía personas y mide resultados con inteligencia de aprendizaje.",
+      images: [{ url: socialImage, width: 1727, height: 911 }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "HeyCourse — El aprendizaje ahora tiene inteligencia propia",
+      title: "HeyCourse — Convierte conocimiento en capacidades demostrables",
       description:
-        "LXP + LMS reinventados con IA contextual para crear, guiar, practicar y medir.",
+        "Crea experiencias, guía personas y mide resultados con inteligencia de aprendizaje.",
       images: [socialImage],
     },
   };

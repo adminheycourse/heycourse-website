@@ -18,11 +18,25 @@ export default function Home() {
       <section className="hero section">
         <div className="container hero-grid">
           <div className="hero-copy">
-            <Eyebrow>LXP + LMS, reinventados con IA</Eyebrow>
+            <Eyebrow>La plataforma de inteligencia de aprendizaje</Eyebrow>
             <h1>
-              El aprendizaje ahora tiene{" "}
-              <span className="gradient-text">inteligencia propia.</span>
+              Convierte conocimiento en{" "}
+              <span className="gradient-text">capacidades demostrables.</span>
             </h1>
+            <div className="hero-answers" aria-label="Qué es, para quién sirve y qué hace HeyCourse">
+              <div>
+                <span>Qué es</span>
+                <strong>LXP + LMS con inteligencia de aprendizaje</strong>
+              </div>
+              <div>
+                <span>Para quién</span>
+                <strong>Empresas, instituciones y proveedores de formación</strong>
+              </div>
+              <div>
+                <span>Qué hace</span>
+                <strong>Crea experiencias, guía personas y mide resultados</strong>
+              </div>
+            </div>
           </div>
           <div className="hero-learning-stage">
             <div className="learning-stage-orbit learning-stage-orbit-one" />
@@ -50,9 +64,9 @@ export default function Home() {
           </div>
           <div className="hero-support">
             <p className="lead">
-              Convierte un prompt o tus documentos en una experiencia completa
-              con contenido, quizzes y simulaciones. Tutores contextuales guían
-              a cada persona y la trazabilidad te ayuda a intervenir antes.
+              Transforma prompts y conocimiento propio en contenido, rutas,
+              quizzes, simulaciones y evaluaciones. Luego acompaña a cada
+              persona y convierte su progreso en señales para actuar.
             </p>
             <div className="button-row">
               <ButtonLink href="/demo" variant="secondary">Recorrer una experiencia</ButtonLink>
@@ -60,11 +74,11 @@ export default function Home() {
                 Cómo funciona <Arrow />
               </ButtonLink>
             </div>
-            <div className="hero-note">
+            <Link className="hero-note hero-note-link" href="/tutores">
               <span className="pulse-dot" />
-              No es un bot. Es una inteligencia que entiende el contexto de
-              aprendizaje.
-            </div>
+              No es un bot: entiende el contexto, guía y evalúa.
+              <Arrow />
+            </Link>
           </div>
         </div>
       </section>
@@ -152,7 +166,7 @@ export default function Home() {
               </p>
               <TutorVisual compact />
               <Link className="text-link" href="/tutores">
-                Conocer los tutores <Arrow />
+                Bot vs Agent vs Tutor <Arrow />
               </Link>
             </article>
 
@@ -169,6 +183,9 @@ export default function Home() {
                 <div className="choice active-choice">Explorar el costo de no actuar</div>
                 <div className="choice">Ofrecer un descuento inmediato</div>
               </div>
+              <Link className="text-link" href="/tutores#simuladores">
+                Explorar simuladores <Arrow />
+              </Link>
             </article>
 
             <article className="bento-card bento-wide dark-card">
@@ -190,39 +207,39 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section manifesto-section">
-        <div className="container manifesto-grid">
-          <div>
-            <Eyebrow>El bot quedó atrás</Eyebrow>
+      <section className="section home-intelligence-section">
+        <div className="container home-intelligence-grid">
+          <div className="home-intelligence-copy">
+            <Eyebrow>Bot vs Agent vs Tutor</Eyebrow>
             <h2>
-              Un bot responde.
+              Tres tecnologías.
               <br />
-              <span className="gradient-text">HeyCourse enseña.</span>
+              <span className="gradient-text">Tres resultados distintos.</span>
             </h2>
-          </div>
-          <div className="manifesto-copy">
             <p>
-              Los bots esperan una pregunta y devuelven una respuesta.
-              HeyCourse entiende qué está aprendiendo una persona, dónde se
-              detuvo, qué ya domina y cuál es el próximo paso útil.
+              Un bot resuelve una duda. Un Agent ejecuta una tarea. HeyCourse
+              desarrolla una capacidad y deja evidencia de que fue aprendida.
             </p>
-            <div className="comparison-lines">
-              <span>
-                <i className="minus">−</i> Respuestas aisladas y genéricas
-              </span>
-              <span>
-                <i className="plus">+</i> Orientación conectada al recorrido
-              </span>
-              <span>
-                <i className="plus">+</i> Memoria de progreso y contexto
-              </span>
-              <span>
-                <i className="plus">+</i> Intervenciones cuando importan
-              </span>
-            </div>
             <ButtonLink href="/tutores" variant="secondary">
-              Ver la diferencia <Arrow />
+              Ver la comparación completa <Arrow />
             </ButtonLink>
+          </div>
+          <div className="home-role-cards">
+            <article>
+              <span>01 · BOT</span>
+              <h3>Responde.</h3>
+              <p>Optimiza la respuesta inmediata dentro de una conversación.</p>
+            </article>
+            <article>
+              <span>02 · AGENT</span>
+              <h3>Ejecuta.</h3>
+              <p>Planifica y actúa para completar una tarea por la persona.</p>
+            </article>
+            <article className="home-role-featured">
+              <span>03 · HEYCOURSE</span>
+              <h3>Desarrolla.</h3>
+              <p>Hace pensar, practicar y demostrar una capacidad con trazabilidad.</p>
+            </article>
           </div>
         </div>
       </section>

@@ -403,6 +403,52 @@ h3 {
   font-size: 13px;
 }
 
+.hero-note-link {
+  width: fit-content;
+  transition: color 0.2s ease;
+}
+
+.hero-note-link:hover {
+  color: var(--purple);
+}
+
+.hero-note-link .arrow {
+  margin-left: 2px;
+}
+
+.hero-answers {
+  margin: 24px 0 2px;
+  display: grid;
+  gap: 7px;
+}
+
+.hero-answers > div {
+  min-height: 53px;
+  padding: 10px 13px;
+  border: 1px solid rgba(127,59,237,0.11);
+  border-radius: 13px;
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.72);
+  box-shadow: 0 8px 26px rgba(74,42,101,0.04);
+}
+
+.hero-answers span {
+  color: var(--purple);
+  font-size: 9px;
+  font-weight: 780;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-answers strong {
+  color: #4c4552;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
 .hero-learning-form {
   margin-top: 0;
   padding: 15px;
@@ -1341,6 +1387,81 @@ a:hover .arrow {
   background: white;
 }
 
+.home-intelligence-section {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 92% 8%, rgba(151, 85, 244, 0.23), transparent 31%),
+    linear-gradient(145deg, #f8f4ff 0%, white 52%, #f1e9ff 100%);
+}
+
+.home-intelligence-grid {
+  display: grid;
+  grid-template-columns: 0.83fr 1.17fr;
+  gap: 68px;
+  align-items: center;
+}
+
+.home-intelligence-copy h2 {
+  margin: 20px 0 24px;
+}
+
+.home-intelligence-copy > p {
+  max-width: 510px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.home-role-cards {
+  display: grid;
+  gap: 10px;
+}
+
+.home-role-cards article {
+  min-height: 125px;
+  padding: 24px 28px;
+  border: 1px solid var(--line);
+  border-radius: 19px;
+  display: grid;
+  grid-template-columns: 120px 0.62fr 1.38fr;
+  align-items: center;
+  gap: 18px;
+  background: rgba(255,255,255,0.88);
+}
+
+.home-role-cards article > span {
+  color: #958a9d;
+  font-size: 9px;
+  font-weight: 760;
+  letter-spacing: 0.1em;
+}
+
+.home-role-cards h3 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.home-role-cards p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.home-role-cards .home-role-featured {
+  border-color: var(--purple);
+  color: white;
+  background:
+    radial-gradient(circle at 95% 0%, rgba(196,156,255,0.42), transparent 36%),
+    linear-gradient(135deg, #37204f, #7f3bed);
+  box-shadow: 0 25px 65px rgba(76, 34, 117, 0.2);
+}
+
+.home-role-featured > span,
+.home-role-featured p {
+  color: rgba(255,255,255,0.7) !important;
+}
+
 .manifesto-grid {
   display: grid;
   grid-template-columns: 1fr 0.9fr;
@@ -1964,6 +2085,368 @@ a:hover .arrow {
   background: white;
 }
 
+/* Bot vs Agent vs HeyCourse */
+.role-comparison-section {
+  background:
+    linear-gradient(rgba(127,59,237,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(127,59,237,0.025) 1px, transparent 1px),
+    #fbf9fd;
+  background-size: 42px 42px;
+}
+
+.role-comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.role-comparison-card {
+  min-height: 640px;
+  padding: 31px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,0.96);
+}
+
+.role-agent {
+  background: linear-gradient(160deg, #f5f1f8, white 48%);
+}
+
+.role-heycourse {
+  border-color: #8a49e9;
+  color: white;
+  background:
+    radial-gradient(circle at 94% 2%, rgba(204,166,255,0.46), transparent 30%),
+    linear-gradient(145deg, #30203d, #6028b4 56%, #823cf0);
+  box-shadow: 0 35px 85px rgba(69,31,103,0.22);
+}
+
+.role-card-heading {
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.role-card-heading > span {
+  color: var(--purple);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+}
+
+.role-card-heading small {
+  padding: 6px 8px;
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 99px;
+  color: rgba(255,255,255,0.78);
+  font-size: 7px;
+  font-weight: 740;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.role-heycourse .role-card-heading > span {
+  color: #d6baff;
+}
+
+.role-label {
+  margin: 44px 0 7px;
+  color: #8c8293;
+  font-size: 11px;
+  font-weight: 680;
+}
+
+.role-comparison-card h3 {
+  margin: 0 0 13px;
+  font-size: 42px;
+}
+
+.role-summary {
+  min-height: 58px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.58;
+}
+
+.role-heycourse .role-label,
+.role-heycourse .role-summary {
+  color: rgba(255,255,255,0.68);
+}
+
+.role-comparison-card dl {
+  margin: auto 0 0;
+}
+
+.role-comparison-card dl > div {
+  padding: 15px 0;
+  border-top: 1px solid var(--line);
+}
+
+.role-heycourse dl > div {
+  border-color: rgba(255,255,255,0.13);
+}
+
+.role-comparison-card dt {
+  margin-bottom: 5px;
+  color: #988e9e;
+  font-size: 8px;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.role-comparison-card dd {
+  margin: 0;
+  color: #4d4653;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.role-heycourse dt {
+  color: rgba(255,255,255,0.48);
+}
+
+.role-heycourse dd {
+  color: rgba(255,255,255,0.9);
+}
+
+.comparison-verdict {
+  margin-top: 16px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background: white;
+}
+
+.comparison-verdict > div {
+  min-height: 70px;
+  padding: 0 17px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  background: #f7f4f9;
+}
+
+.comparison-verdict > div:last-child {
+  color: white;
+  background: var(--purple);
+}
+
+.comparison-verdict span {
+  color: #9b91a1;
+  font-size: 8px;
+  font-weight: 780;
+  letter-spacing: 0.1em;
+}
+
+.comparison-verdict > div:last-child span {
+  color: rgba(255,255,255,0.66);
+}
+
+.comparison-verdict strong {
+  font-size: 12px;
+  text-align: right;
+}
+
+/* Intelligent simulator */
+.simulator-section {
+  color: white;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(139,66,241,0.42), transparent 32%),
+    #211827;
+}
+
+.simulator-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 68px;
+  align-items: center;
+}
+
+.simulator-copy .eyebrow {
+  color: #c9a8ff;
+}
+
+.simulator-copy h2 {
+  margin: 22px 0 25px;
+}
+
+.simulator-copy h2 span {
+  color: #ba8bff;
+}
+
+.simulator-copy > p {
+  color: rgba(255,255,255,0.64);
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+.simulator-copy .check-list {
+  color: rgba(255,255,255,0.76);
+}
+
+.simulator-console {
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 25px;
+  background: white;
+  color: var(--ink);
+  box-shadow: 0 40px 90px rgba(0,0,0,0.28);
+}
+
+.simulator-top {
+  min-height: 67px;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.simulator-top > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.simulator-top strong {
+  font-size: 12px;
+}
+
+.simulator-body {
+  padding: 26px;
+}
+
+.simulator-message {
+  margin-bottom: 15px;
+  padding: 20px;
+  border-radius: 16px;
+  background: #f3edf9;
+  color: #4f4656;
+  font-size: 14px;
+  line-height: 1.62;
+}
+
+.simulator-options {
+  display: grid;
+  gap: 8px;
+}
+
+.simulator-options span {
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: #756b7b;
+  font-size: 10px;
+}
+
+.simulator-options .selected {
+  border-color: #9b62ed;
+  background: #f7f2ff;
+  color: var(--purple-dark);
+  box-shadow: inset 3px 0 0 var(--purple);
+}
+
+.simulator-feedback {
+  margin-top: 17px;
+  padding: 15px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(120deg, #e9dcff, #f8f4ff);
+}
+
+.simulator-feedback > div {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.simulator-feedback p {
+  margin: 0;
+  color: #6c6073;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.simulator-feedback p strong {
+  display: block;
+  color: var(--ink);
+  font-size: 10px;
+}
+
+.simulator-feedback > strong {
+  margin-left: auto;
+  color: var(--purple);
+  font-size: 20px;
+}
+
+.simulator-rubric {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+}
+
+.simulator-rubric span {
+  padding: 9px;
+  border-radius: 9px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  background: #f4f1f6;
+  color: #7d7383;
+  font-size: 8px;
+}
+
+.simulator-rubric b {
+  color: var(--purple-dark);
+}
+
+.simulation-difference {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 17px;
+  background: rgba(255,255,255,0.12);
+}
+
+.simulation-difference > div {
+  min-height: 90px;
+  padding: 18px;
+  background: rgba(255,255,255,0.055);
+}
+
+.simulation-difference > div:last-child {
+  background: rgba(127,59,237,0.28);
+}
+
+.simulation-difference span {
+  color: #ba8bff;
+  font-size: 8px;
+  font-weight: 760;
+  letter-spacing: 0.1em;
+}
+
+.simulation-difference p {
+  margin: 9px 0 0;
+  color: rgba(255,255,255,0.78);
+  font-size: 11px;
+}
+
 .comparison-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2301,7 +2784,7 @@ a:hover .arrow {
 .tutor-mode-rail .container {
   min-height: 78px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .tutor-mode-rail span {
@@ -3489,9 +3972,28 @@ a:hover .arrow {
   }
 
   .manifesto-grid,
+  .home-intelligence-grid,
+  .simulator-grid,
   .split-section,
   .split-section.reverse {
     grid-template-columns: 1fr;
+  }
+
+  .home-intelligence-grid,
+  .simulator-grid {
+    gap: 42px;
+  }
+
+  .role-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .role-comparison-card {
+    min-height: auto;
+  }
+
+  .role-comparison-card dl {
+    margin-top: 30px;
   }
 
   .worlds-grid {
@@ -3537,7 +4039,7 @@ a:hover .arrow {
 
   .tutor-mode-rail .container {
     overflow-x: auto;
-    grid-template-columns: repeat(5, minmax(180px, 1fr));
+    grid-template-columns: repeat(6, minmax(180px, 1fr));
   }
 
   .tutor-modes {
@@ -3592,6 +4094,10 @@ a:hover .arrow {
 
   .hero-grid {
     gap: 35px;
+  }
+
+  .hero-answers > div {
+    grid-template-columns: 75px 1fr;
   }
 
   .hero-learning-stage {
@@ -3701,6 +4207,46 @@ a:hover .arrow {
 
   .manifesto-grid {
     gap: 40px;
+  }
+
+  .home-role-cards article {
+    min-height: auto;
+    padding: 22px;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .home-role-cards h3 {
+    font-size: 28px;
+  }
+
+  .comparison-verdict,
+  .simulation-difference {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-verdict > div {
+    min-height: 60px;
+  }
+
+  .role-comparison-card {
+    padding: 26px;
+  }
+
+  .role-comparison-card h3 {
+    font-size: 38px;
+  }
+
+  .simulator-console {
+    border-radius: 19px;
+  }
+
+  .simulator-body {
+    padding: 18px;
+  }
+
+  .simulator-rubric {
+    grid-template-columns: 1fr;
   }
 
   .world-card {

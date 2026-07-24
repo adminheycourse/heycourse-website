@@ -17,7 +17,7 @@ export function Logo() {
 const platformLinks = [
   ["/producto", "Vista general", "La plataforma completa"],
   ["/crear", "Crear", "De prompts a experiencias"],
-  ["/tutores", "Guiar", "Tutor, Socrático y Evaluador"],
+  ["/tutores", "Tutores + simuladores", "Bot vs Agent vs Learning Tutor"],
   ["/analitica", "Medir", "Trazabilidad e intervención"],
 ];
 
@@ -112,7 +112,7 @@ export function SiteFooter() {
           <h4>Plataforma</h4>
           <Link href="/producto">Producto</Link>
           <Link href="/crear">Creación</Link>
-          <Link href="/tutores">Tutores</Link>
+          <Link href="/tutores">Tutores y simuladores</Link>
           <Link href="/analitica">Analítica</Link>
         </div>
         <div>

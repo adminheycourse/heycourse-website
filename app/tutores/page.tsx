@@ -9,16 +9,48 @@ import {
 } from "../components";
 
 export const metadata: Metadata = {
-  title: "Tutores inteligentes",
+  title: "Tutores y simuladores inteligentes",
   description:
-    "Tutor, Socrático y Evaluador por chat o voz, más experiencias con avatar y memoria de contexto.",
+    "Descubre la diferencia entre un Bot, un Agent y los tutores y simuladores de HeyCourse.",
 };
 
-const comparisons = [
-  ["Espera una pregunta", "Puede aparecer cuando detecta una fricción relevante"],
-  ["Responde desde una conversación aislada", "Usa el contenido, la actividad y el progreso como contexto"],
-  ["Optimiza la respuesta inmediata", "Cambia su comportamiento según el objetivo pedagógico"],
-  ["Olvida el recorrido", "Mantiene memoria del progreso relevante"],
+const intelligenceTypes = [
+  {
+    key: "bot",
+    number: "01",
+    label: "Bot tradicional",
+    verb: "Responde",
+    summary: "Optimiza una respuesta inmediata dentro de una conversación.",
+    purpose: "Resolver una duda",
+    context: "Chat, FAQ o base de conocimiento",
+    behavior: "Espera una pregunta y responde",
+    output: "Una respuesta",
+    result: "Duda resuelta",
+  },
+  {
+    key: "agent",
+    number: "02",
+    label: "Agent tradicional",
+    verb: "Ejecuta",
+    summary: "Planifica y usa herramientas para completar una tarea.",
+    purpose: "Conseguir un resultado operativo",
+    context: "Objetivo, sistemas y herramientas",
+    behavior: "Planifica, decide y actúa",
+    output: "Una acción realizada",
+    result: "Trabajo automatizado",
+  },
+  {
+    key: "heycourse",
+    number: "03",
+    label: "Tutor HeyCourse",
+    verb: "Desarrolla",
+    summary: "Guía, hace practicar y comprueba que existe una capacidad.",
+    purpose: "Lograr dominio y transferencia",
+    context: "Contenido, rol, objetivo, progreso y evidencia",
+    behavior: "Pregunta, adapta, simula y evalúa",
+    output: "Práctica, feedback y trazabilidad",
+    result: "Capacidad demostrada",
+  },
 ];
 
 const tutorModes = [
@@ -61,10 +93,10 @@ export default function TutoresPage() {
   return (
     <main>
       <PageHero
-        eyebrow="Tutores inteligentes"
-        title={<>Un propósito distinto para cada <span className="gradient-text">conversación.</span></>}
-        text="HeyCourse puede explicar, guiar con preguntas o diagnosticar dominio. La misma inteligencia contextual cambia de modo según lo que la persona necesita aprender."
-        action={<ButtonLink href="#modos">Conocer los tres modos</ButtonLink>}
+        eyebrow="Tutores + simuladores con inteligencia de aprendizaje"
+        title={<>No conversa para parecer inteligente. <span className="gradient-text">Enseña para desarrollar capacidades.</span></>}
+        text="Un Bot responde. Un Agent ejecuta. HeyCourse conoce el contenido, el objetivo, el rol y el progreso para guiar, hacer practicar, evaluar y dejar evidencia."
+        action={<ButtonLink href="#comparativa">Ver la diferencia</ButtonLink>}
       >
         <TutorVisual />
       </PageHero>
@@ -76,6 +108,45 @@ export default function TutoresPage() {
           <span><i>03</i> Evaluador · diagnostica</span>
           <span><i>04</i> Voz · conversa</span>
           <span><i>05</i> Avatar · presencia</span>
+          <span><i>06</i> Simulador · practica</span>
+        </div>
+      </section>
+
+      <section className="section role-comparison-section" id="comparativa">
+        <div className="container">
+          <SectionIntro
+            eyebrow="La diferencia esencial"
+            title="Responder, ejecutar y enseñar no son lo mismo."
+            text="La tecnología puede usar la misma IA y perseguir objetivos completamente distintos. La diferencia está en el contexto que comprende, el comportamiento que adopta y el resultado que produce."
+          />
+          <div className="role-comparison-grid">
+            {intelligenceTypes.map((type) => (
+              <article
+                className={`role-comparison-card role-${type.key}`}
+                key={type.key}
+              >
+                <div className="role-card-heading">
+                  <span>{type.number}</span>
+                  {type.key === "heycourse" && <small>Inteligencia de aprendizaje</small>}
+                </div>
+                <p className="role-label">{type.label}</p>
+                <h3>{type.verb}.</h3>
+                <p className="role-summary">{type.summary}</p>
+                <dl>
+                  <div><dt>Objetivo</dt><dd>{type.purpose}</dd></div>
+                  <div><dt>Contexto</dt><dd>{type.context}</dd></div>
+                  <div><dt>Comportamiento</dt><dd>{type.behavior}</dd></div>
+                  <div><dt>Entrega</dt><dd>{type.output}</dd></div>
+                  <div><dt>Resultado</dt><dd>{type.result}</dd></div>
+                </dl>
+              </article>
+            ))}
+          </div>
+          <div className="comparison-verdict" aria-label="Resumen de la comparación">
+            <div><span>BOT</span><strong>Resuelve dudas</strong></div>
+            <div><span>AGENT</span><strong>Realiza tareas</strong></div>
+            <div><span>HEYCOURSE</span><strong>Desarrolla capacidades</strong></div>
+          </div>
         </div>
       </section>
 
@@ -171,24 +242,67 @@ export default function TutoresPage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container">
-          <SectionIntro
-            eyebrow="La diferencia"
-            title="Responder no es lo mismo que enseñar."
-            text="El cambio no está en que la conversación suene humana. Está en que la orientación entienda el aprendizaje."
-          />
-          <div className="comparison-table">
-            <div className="comparison-row">
-              <div className="bot-side"><strong>Bot tradicional</strong><p>Interacción aislada</p></div>
-              <div className="tutor-side"><strong>Tutor HeyCourse</strong><p>Intención pedagógica y contexto</p></div>
+      <section className="section simulator-section" id="simuladores">
+        <div className="container simulator-grid">
+          <div className="simulator-copy">
+            <span className="eyebrow">Simuladores inteligentes</span>
+            <h2>
+              El bot explica qué harías. El Agent lo hace por ti.{" "}
+              <span>HeyCourse te hace practicar.</span>
+            </h2>
+            <p>
+              Cada simulación coloca a la persona frente a una decisión real,
+              interpreta su respuesta y devuelve feedback por criterio. Puede
+              repetir hasta convertir conocimiento en desempeño observable.
+            </p>
+            <ul className="check-list">
+              <li><Check /> Escenarios, decisiones y conversaciones de rol</li>
+              <li><Check /> Rúbricas por competencia y feedback inmediato</li>
+              <li><Check /> Reintentos que muestran evolución</li>
+              <li><Check /> Evidencia personal para el equipo de formación</li>
+            </ul>
+            <div className="button-row">
+              <ButtonLink href="/demo">Recorrer una experiencia <Arrow /></ButtonLink>
             </div>
-            {comparisons.map(([bot, tutor]) => (
-              <div className="comparison-row" key={bot}>
-                <div className="bot-side"><p>− {bot}</p></div>
-                <div className="tutor-side"><p>+ {tutor}</p></div>
+          </div>
+          <div className="simulator-console" aria-label="Ejemplo de una simulación de venta consultiva">
+            <div className="simulator-top">
+              <div>
+                <span className="window-logo"><i /><i /><i /></span>
+                <strong>Simulación · Venta consultiva</strong>
               </div>
-            ))}
+              <span className="live-pill">En contexto</span>
+            </div>
+            <div className="simulator-body">
+              <span className="micro-label">Escenario 03 · Objeción de precio</span>
+              <div className="simulator-message">
+                “Su propuesta es interesante, pero el precio está por encima de
+                lo que habíamos previsto. ¿Por qué no debería elegir la opción
+                más económica?”
+              </div>
+              <div className="simulator-options">
+                <span>Reducir el precio para cerrar hoy</span>
+                <span className="selected">Explorar el costo de no resolver el problema</span>
+                <span>Enumerar todas las funcionalidades</span>
+              </div>
+              <div className="simulator-feedback">
+                <div>
+                  <span className="ai-spark">✦</span>
+                  <p><strong>Feedback por rúbrica</strong>Conectaste valor con impacto antes de negociar precio.</p>
+                </div>
+                <strong>86%</strong>
+              </div>
+              <div className="simulator-rubric">
+                <span>Escucha <b>92</b></span>
+                <span>Diagnóstico <b>88</b></span>
+                <span>Valor <b>79</b></span>
+              </div>
+            </div>
+          </div>
+          <div className="simulation-difference">
+            <div><span>BOT</span><p>Te dice qué podrías hacer.</p></div>
+            <div><span>AGENT</span><p>Puede hacerlo por ti.</p></div>
+            <div><span>HEYCOURSE</span><p>Te entrena hasta que puedas hacerlo.</p></div>
           </div>
         </div>
       </section>
