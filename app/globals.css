@@ -102,37 +102,47 @@ select {
 }
 
 .desktop-nav > a,
-.nav-dropdown > summary {
+.nav-dropdown-trigger {
   color: #514a58;
   transition: color 0.2s ease;
 }
 
 .desktop-nav > a:hover,
-.nav-dropdown > summary:hover {
+.nav-dropdown-trigger:hover,
+.nav-dropdown.is-open .nav-dropdown-trigger {
   color: var(--purple);
 }
 
 .nav-dropdown {
   position: relative;
+  padding: 12px 0;
+  margin: -12px 0;
 }
 
-.nav-dropdown summary {
-  list-style: none;
+.nav-dropdown-trigger {
+  padding: 0;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: inherit;
+  font: inherit;
   cursor: pointer;
 }
 
-.nav-dropdown summary::-webkit-details-marker {
-  display: none;
-}
-
-.nav-dropdown summary span {
+.nav-dropdown-trigger span {
   margin-left: 3px;
   font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+.nav-dropdown.is-open .nav-dropdown-trigger span {
+  transform: rotate(180deg);
 }
 
 .dropdown-panel {
   position: absolute;
-  top: 32px;
+  top: calc(100% - 4px);
   left: -22px;
   width: 290px;
   padding: 10px;
@@ -140,6 +150,11 @@ select {
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.98);
   box-shadow: var(--shadow);
+}
+
+.dropdown-panel[hidden],
+.mobile-panel[hidden] {
+  display: none;
 }
 
 .dropdown-panel a {
@@ -3851,9 +3866,10 @@ a:hover .arrow {
     display: block;
   }
 
-  .mobile-menu > summary {
+  .mobile-menu-toggle {
     width: 42px;
     height: 42px;
+    padding: 0;
     border: 1px solid var(--line);
     border-radius: 10px;
     display: flex;
@@ -3861,13 +3877,11 @@ a:hover .arrow {
     align-items: center;
     justify-content: center;
     gap: 6px;
-    list-style: none;
+    background: white;
     cursor: pointer;
   }
 
-  .mobile-menu > summary::-webkit-details-marker { display: none; }
-
-  .mobile-menu > summary span {
+  .mobile-menu-toggle span {
     width: 18px;
     height: 1.5px;
     background: var(--ink);
