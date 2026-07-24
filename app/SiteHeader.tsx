@@ -18,6 +18,7 @@ const languageSelectorLabels: Record<Locale, string> = {
   en: "Language selector",
   pt: "Seletor de idioma",
   fr: "Sélecteur de langue",
+  it: "Selettore della lingua",
 };
 
 const navigation = {
@@ -107,6 +108,28 @@ const navigation = {
     solutionLinks: [
       ["/casos-de-uso", "Cas d’usage", "Un apprentissage connecté au travail"],
       ["/marca-blanca", "Marque blanche", "Votre identité, domaine et expérience"],
+    ] as HeaderLink[],
+  },
+  it: {
+    platform: "Piattaforma",
+    how: "Come funziona",
+    solutions: "Soluzioni",
+    signIn: "Accedi",
+    createAccount: "Crea un account",
+    experience: "Vedi l’esperienza",
+    openMenu: "Apri menu",
+    closeMenu: "Chiudi menu",
+    navigationLabel: "Navigazione principale",
+    homeLabel: "HeyCourse, home",
+    platformLinks: [
+      ["/producto", "Panoramica", "La piattaforma completa"],
+      ["/crear", "Crea", "Dai prompt alle esperienze"],
+      ["/tutores", "Tutor + simulazioni", "Bot vs Agent vs Learning Tutor"],
+      ["/analitica", "Misura", "Tracciabilità e intervento"],
+    ] as HeaderLink[],
+    solutionLinks: [
+      ["/casos-de-uso", "Casi d’uso", "Apprendimento collegato al lavoro"],
+      ["/marca-blanca", "White label", "La tua identità, dominio ed esperienza"],
     ] as HeaderLink[],
   },
 };

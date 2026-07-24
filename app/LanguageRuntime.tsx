@@ -5,6 +5,7 @@ import { useLayoutEffect } from "react";
 import type { ReactNode } from "react";
 import { ENGLISH_COPY } from "./english-copy";
 import { FRENCH_COPY } from "./french-copy";
+import { ITALIAN_COPY } from "./italian-copy";
 import {
   localeFromPathname,
   localizedPath,
@@ -27,6 +28,7 @@ function copyForLocale(locale: Locale): Record<string, string> | null {
   if (locale === "en") return ENGLISH_COPY;
   if (locale === "pt") return PORTUGUESE_COPY;
   if (locale === "fr") return FRENCH_COPY;
+  if (locale === "it") return ITALIAN_COPY;
   return null;
 }
 

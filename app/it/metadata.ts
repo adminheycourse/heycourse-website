@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
 
-export function frenchMetadata(
+export function italianMetadata(
   title: string,
   description: string,
-  frenchPath: string,
+  italianPath: string,
   spanishPath: string,
 ): Metadata {
   const englishPath = `/en${spanishPath === "/" ? "" : spanishPath}`;
   const portuguesePath = `/pt${spanishPath === "/" ? "" : spanishPath}`;
-  const italianPath = `/it${spanishPath === "/" ? "" : spanishPath}`;
+  const frenchPath = `/fr${spanishPath === "/" ? "" : spanishPath}`;
 
   return {
     title,
     description,
     alternates: {
-      canonical: frenchPath,
+      canonical: italianPath,
       languages: {
         es: spanishPath,
         en: englishPath,
@@ -24,12 +24,12 @@ export function frenchMetadata(
       },
     },
     openGraph: {
-      locale: "fr_FR",
+      locale: "it_IT",
       title: `${title} | HeyCourse`,
       description,
       images: [
         {
-          url: "/og-learning-intelligence-fr.png",
+          url: "/og-learning-intelligence-it.png",
           width: 1725,
           height: 912,
         },
@@ -39,7 +39,7 @@ export function frenchMetadata(
       card: "summary_large_image",
       title: `${title} | HeyCourse`,
       description,
-      images: ["/og-learning-intelligence-fr.png"],
+      images: ["/og-learning-intelligence-it.png"],
     },
   };
 }

@@ -8,6 +8,7 @@ export function portugueseMetadata(
 ): Metadata {
   const englishPath = `/en${spanishPath === "/" ? "" : spanishPath}`;
   const frenchPath = `/fr${spanishPath === "/" ? "" : spanishPath}`;
+  const italianPath = `/it${spanishPath === "/" ? "" : spanishPath}`;
 
   return {
     title,
@@ -19,6 +20,7 @@ export function portugueseMetadata(
         en: englishPath,
         pt: portuguesePath,
         fr: frenchPath,
+        it: italianPath,
       },
     },
     openGraph: {

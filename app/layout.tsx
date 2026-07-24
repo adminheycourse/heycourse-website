@@ -39,6 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
         en: "/en",
         pt: "/pt",
         fr: "/fr",
+        it: "/it",
       },
     },
     icons: {

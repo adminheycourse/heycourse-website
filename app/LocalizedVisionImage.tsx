@@ -24,6 +24,10 @@ const localizedVision: Record<
     src: "/og-learning-intelligence-fr.png",
     alt: "HeyCourse relie les prompts, les quiz, les simulations, les tuteurs contextuels et les analyses individuelles dans un système d’intelligence d’apprentissage.",
   },
+  it: {
+    src: "/og-learning-intelligence-it.png",
+    alt: "HeyCourse collega prompt, quiz, simulazioni, tutor contestuali e analisi individuali in un sistema di intelligenza dell’apprendimento.",
+  },
 };
 
 export function LocalizedVisionImage() {

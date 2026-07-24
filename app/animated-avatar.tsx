@@ -41,6 +41,12 @@ const avatarCopy: Record<
     listen: "Écouter Sophia",
     mute: "Couper le son",
   },
+  it: {
+    video: "/heycourse-avatar-sophia-it-loop.mp4",
+    session: "Sessione attiva · Leadership",
+    listen: "Ascolta Sophia",
+    mute: "Disattiva audio",
+  },
 };
 
 export function AnimatedAvatar() {
