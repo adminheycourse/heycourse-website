@@ -2,7 +2,7 @@
 
 Corporate website for HeyCourse — LXP + LMS with learning intelligence.
 
-The site is standalone: it does not require OpenAI hosting, credentials or
+The site is standalone: it does not require external platform credentials or
 runtime services. Deploy the built output to an infrastructure account owned by
 HeyCourse, such as Cloudflare, Vercel or Railway.
 
